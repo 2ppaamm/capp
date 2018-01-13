@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../models/course';
+import { Dashboard } from '../models/dashboard';
+import { DashboardService } from '../services/dashboard.service';
 
 @Component({
   selector: 'ag-dashboard',
@@ -8,10 +10,12 @@ import { Course } from '../models/course';
 })
 export class DashboardComponent implements OnInit {
 
+  dashboard: Dashboard;
   selectedCourse: Course;
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+  	this.dashboard = this.dashboardService.getDashboard();
   }
 
   selectCourse(course: Course) {

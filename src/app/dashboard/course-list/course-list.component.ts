@@ -22,7 +22,6 @@ export class CourseListComponent implements OnInit {
   }
 
   onSelect(course:Course){
-    console.log(course);
     this.selectedEvent.emit(course);
   }
 
