@@ -12,6 +12,11 @@ import { CourseDetailComponent } from './dashboard/course-detail/course-detail.c
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { routes } from './app.routes';
+import { AdminComponent } from './admin/admin.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard.component';
+import { AdminCourseListComponent } from './admin/admin-course-list/admin-course-list.component';
+import { FormsModule } from '@angular/forms';
+import { AdminCourseCreateComponent } from './admin/admin-course-create/admin-course-create.component';
 
 
 @NgModule({
@@ -23,12 +28,17 @@ import { routes } from './app.routes';
     CourseComponent,
     CourseDetailComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent,
+    AdminDashboardComponent,
+    AdminCourseListComponent,
+    AdminCourseCreateComponent
   ],
   imports: [
     routes,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CourseService, DashboardService],
   bootstrap: [AppComponent]
