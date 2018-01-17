@@ -17,6 +17,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { AdminCourseListComponent } from './admin/admin-course-list/admin-course-list.component';
 import { FormsModule } from '@angular/forms';
 import { AdminCourseCreateComponent } from './admin/admin-course-create/admin-course-create.component';
+import { AdminCourseEditComponent } from './admin/admin-course-edit/admin-course-edit.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AdminCourseCreateComponent } from './admin/admin-course-create/admin-co
     AdminComponent,
     AdminDashboardComponent,
     AdminCourseListComponent,
-    AdminCourseCreateComponent
+    AdminCourseCreateComponent,
+    AdminCourseEditComponent
   ],
   imports: [
     routes,
