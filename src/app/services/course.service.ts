@@ -9,7 +9,7 @@ export class CourseService {
 
     constructor(private http: HttpClient) { }
 
-    getCourses() {
+    getCourses():Observable<any> {
     	return this.http.get('http://localhost/courses').map((response) => response);
     }
 
