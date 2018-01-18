@@ -15,10 +15,11 @@ import { routes } from './app.routes';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { AdminCourseListComponent } from './admin/admin-course-list/admin-course-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminCourseCreateComponent } from './admin/admin-course-create/admin-course-create.component';
 import { AdminCourseEditComponent } from './admin/admin-course-edit/admin-course-edit.component';
 import { AdminCourseDeleteComponent } from './admin/admin-course-delete/admin-course-delete.component';
+import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-create.component';
 
 
 @NgModule({
@@ -36,11 +37,14 @@ import { AdminCourseDeleteComponent } from './admin/admin-course-delete/admin-co
     AdminCourseListComponent,
     AdminCourseCreateComponent,
     AdminCourseEditComponent,
-    AdminCourseDeleteComponent
+    AdminCourseDeleteComponent,
+    AdminUserCreateComponent
   ],
   imports: [
     routes,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule
   ],
