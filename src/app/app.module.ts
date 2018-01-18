@@ -20,6 +20,8 @@ import { AdminCourseCreateComponent } from './admin/admin-course-create/admin-co
 import { AdminCourseEditComponent } from './admin/admin-course-edit/admin-course-edit.component';
 import { AdminCourseDeleteComponent } from './admin/admin-course-delete/admin-course-delete.component';
 import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-create.component';
+import { UserService } from './services/user.service';
+import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.component';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-c
     AdminCourseCreateComponent,
     AdminCourseEditComponent,
     AdminCourseDeleteComponent,
-    AdminUserCreateComponent
+    AdminUserCreateComponent,
+    AdminUserListComponent
   ],
   imports: [
     routes,
@@ -48,7 +51,7 @@ import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-c
     HttpClientModule,
     FormsModule
   ],
-  providers: [CourseService, DashboardService],
+  providers: [CourseService, DashboardService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
