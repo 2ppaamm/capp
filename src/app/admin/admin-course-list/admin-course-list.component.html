@@ -20,9 +20,8 @@
         <td><img src="{{course.image}}" width="200"/></td>
         <td>{{course.course}} </td>
         <td>
-          <a [routerLink]="['/courses/edit']" class="btn btn-info"> Edit</a>
-          <a [routerLink]="['/courses/delete']" class="btn btn-danger"> Delete</a>
-        </td>
+		  	<a [routerLink]="['/admin/courses/edit', course.id]" class="btn btn-info"> Edit</a>
+			<a [routerLink]="['/admin/courses/delete', course.id]" class="btn btn-danger"> Delete</a>        </td>
       </tr>
 
       </tbody>

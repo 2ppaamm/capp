@@ -20,4 +20,23 @@ export class CourseService {
 	      .map((response) => response)
 	      .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));
 	}
+	getCourse(id: String): Observable<any> {
+	  return this.http.get('http://localhost/courses/' + id)
+	    .map((response) => response)
+        .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));
+	}
+	updateCourse(course: Object): Observable<Course[]> {
+	  const apiUrl = 'http://localhost/courses';
+	  const url = `${apiUrl}/${course['id']}`;
+	  return this.http.put(url, course)
+	    .map((response) => response)
+	    .catch((error: any) => Observable.throw(error.error || {message: 'Server Error'}));
+	}
+	deleteCourse(id: String): Observable<Course[]> {
+	  const apiUrl = 'http://localhost/courses';
+	  const url = `${apiUrl}/${id}`;
+	  return this.http.delete(url)
+	    .map((response) => response)
+	    .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'}));
+	}	
 }

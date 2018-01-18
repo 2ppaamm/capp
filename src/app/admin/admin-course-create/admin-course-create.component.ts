@@ -8,6 +8,8 @@ import { Router} from '@angular/router';
   styleUrls: ['./admin-course-create.component.css']
 })
 export class AdminCourseCreateComponent implements OnInit {
+  status: string;
+  message: string;
 
   constructor(private courseService: CourseService, private router:Router) { }
 
@@ -17,8 +19,15 @@ export class AdminCourseCreateComponent implements OnInit {
    this.courseService.addCourse(course)
    .subscribe(
      course  => {
-     this.router.navigate(['/admin/courses']);
+       this.router.navigate(['/admin/courses']);
+       this.status = 'success';
+       this.message = course['message'];
      },
-     error =>  console.log(<any>error));
+     error => {
+       console.log(<any>error);
+       this.status = 'success';
+       this.message = error['message'];
+     }
+   );
   }
 }
