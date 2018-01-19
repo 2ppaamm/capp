@@ -5,6 +5,7 @@ import {AboutComponent} from "./about/about.component";
 import {ModuleWithProviders} from "@angular/core";
 import {AdminComponent} from './admin/admin.component';
 import {adminRoutes} from './admin/admin.routes';
+import {AuthGuardService} from './services/auth-guard.service';
 
 
 const appRoutes: Routes = [
@@ -12,8 +13,7 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'admin', component: AdminComponent, children: adminRoutes}
-
+  { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},
 
 ];
 

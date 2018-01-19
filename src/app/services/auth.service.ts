@@ -37,14 +37,14 @@ export class AuthService {
     // Set the time that the access token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
   }
 
   public logout(): void {
     // Remove tokens and expiry time from localStorage
     localStorage.removeItem('access_token');
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('token');
     localStorage.removeItem('expires_at');
     // Go back to the home route
     this.router.navigate(['/']);
