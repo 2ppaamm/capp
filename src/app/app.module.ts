@@ -24,6 +24,8 @@ import { UserService } from './services/user.service';
 import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.component';
 import { AuthService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
+import {AuthGuardService} from './services/auth-guard.service';
+
 
 @NgModule({
   declarations: [
@@ -54,13 +56,13 @@ import { JwtModule } from '@auth0/angular-jwt';
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
-          return localStorage.getItem('id_token');
+          return localStorage.getItem('token');
         },
         whitelistedDomains: ['localhost:4200', 'math.all-gifted.com']
       }
     })
   ],
-  providers: [CourseService, DashboardService, UserService, AuthService],
+  providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
