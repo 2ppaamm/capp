@@ -22,7 +22,8 @@ import { AdminCourseDeleteComponent } from './admin/admin-course-delete/admin-co
 import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-create.component';
 import { UserService } from './services/user.service';
 import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.component';
-
+import { AuthService } from './services/auth.service';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -49,9 +50,17 @@ import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('id_token');
+        },
+        whitelistedDomains: ['localhost:4200', 'math.all-gifted.com']
+      }
+    })
   ],
-  providers: [CourseService, DashboardService, UserService],
+  providers: [CourseService, DashboardService, UserService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
