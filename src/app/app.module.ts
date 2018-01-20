@@ -54,9 +54,9 @@ import { JwtModule } from '@auth0/angular-jwt';
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
-          return localStorage.getItem('id_token');
+          return localStorage.getItem('token');
         },
-        whitelistedDomains: ['localhost:4200', 'math.all-gifted.com']
+        whitelistedDomains: ['localhost:4200', 'localhost']
       }
     })
   ],
