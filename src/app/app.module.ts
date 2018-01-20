@@ -24,6 +24,8 @@ import { UserService } from './services/user.service';
 import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.component';
 import { AuthService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
+import {AuthGuardService} from './services/auth-guard.service';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +62,7 @@ import { JwtModule } from '@auth0/angular-jwt';
       }
     })
   ],
-  providers: [CourseService, DashboardService, UserService, AuthService],
+  providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
