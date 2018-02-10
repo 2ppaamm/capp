@@ -19,6 +19,7 @@ export class CourseListComponent implements OnInit {
 
   ngOnInit() {
     this.courses = this.courseService.getCourses();
+//    console.log(this.courses);
   }
 
   onSelect(course:Course){

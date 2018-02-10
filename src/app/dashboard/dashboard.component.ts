@@ -10,12 +10,13 @@ import { DashboardService } from '../services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  dashboard: Dashboard;
+  dashboard: any;
   selectedCourse: Course;
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
   	this.dashboard = this.dashboardService.getDashboard();
+    console.log(this.dashboard);
   }
 
   selectCourse(course: Course) {

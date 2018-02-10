@@ -22,13 +22,8 @@ export class AdminCourseEditComponent implements OnInit, OnDestroy {
     this.params = this.activatedRoute.params.subscribe(params => this.id = params['id']);
     this.courseService.getCourse(this.id).subscribe(
 	  data => {
-	    this.course.description = data['description'];
-		this.course.course = data['course'];
-		this.course.image = data['image'];
-		this.course.start_maxile_score = data['start_maxile_score'];
-		this.course.end_maxile_score = data['end_maxile_score'];
-		this.course.id = data['id'];
-	    console.log(this.course);
+	    this.course = data;
+      console.log(this.course.description);
 	  },
 	  error =>  console.log(<any>error));
   }

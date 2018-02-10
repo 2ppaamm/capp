@@ -10,10 +10,16 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
-  getDashboard(){
+  //getDashboard(){
 //  	return this.dashboard;
-    	console.log(this.http.get('http://localhost').map((response) => response));
-    	return this.dashboard;
+    //	console.log(this.http.get('http://localhost').map((response) => response));
+    //	return this.dashboard;
+  //}
+
+  getDashboard(): Observable<any> {
+  	return this.http.get('http://localhost/api/protected')
+   	.map((response) => response)	      
+   	.catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
   }
 
 }

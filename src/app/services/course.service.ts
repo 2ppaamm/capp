@@ -11,8 +11,8 @@ export class CourseService {
     constructor(private http: HttpClient) { }
 
     getCourses():Observable<any> {
-    	return this.http.get('http://localhost/courses')
-    	.map((response) => response)	      
+    	return this.http.get('http://localhost/api/protected')
+    	.map((response) => response['courses'])	      
     	.catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
     }
 	addCourse(course: Object): Observable<Course[]> {
@@ -22,7 +22,7 @@ export class CourseService {
 	}
 	getCourse(id: String): Observable<any> {
 	  return this.http.get('http://localhost/courses/' + id)
-	    .map((response) => response)
+	    .map((response) => response['course'])
         .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));
 	}
 	updateCourse(course: Object): Observable<Course[]> {
