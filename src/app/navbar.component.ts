@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+declare var jQuery:any;
+declare var $ :any;
 
 @Component({
   selector: 'ag-navbar',
@@ -9,8 +11,33 @@ import { AuthService } from './services/auth.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private authService:AuthService) { }
-
+  
   ngOnInit() {
+
+    $(document).ready(function () {
+        mainNav();
+    });
+
+    $(window).scroll(function () {
+        mainNav();
+    });
+
+    $(document).ready(function() {
+      $('.main-navigation').onePageNav({
+        scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
+        filter: ':not(.external)',
+        changeHash: true
+      });
+      
+    })
+
+    function mainNav() {
+      var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'});
+
+      else $('.sticky-navigation').stop().animate({"top": '-60'});
+    }
+
   }
 
   public login(){

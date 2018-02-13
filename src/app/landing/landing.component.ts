@@ -16,6 +16,50 @@ export class LandingComponent implements OnInit {
   constructor(private courseService: CourseService) { }
 
   ngOnInit() {
+
+  /* =================================
+===  STELLAR                    ====
+=================================== */
+$(window).stellar({ 
+horizontalScrolling: false 
+});
+
+    $(document).ready(function () {
+
+    $("#feedbacks").owlCarousel({
+
+        navigation: false, // Show next and prev buttons
+        slideSpeed: 800,
+        paginationSpeed: 400,
+        autoPlay: 5000,
+        singleItem: true
+    });
+
+    var owl = $("#screenshots");
+
+    owl.owlCarousel({
+        items: 4, //10 items above 1000px browser width
+        itemsDesktop: [1000, 4], //5 items between 1000px and 901px
+        itemsDesktopSmall: [900, 2], // betweem 900px and 601px
+        itemsTablet: [600, 1], //2 items between 600 and 0
+        itemsMobile: false // itemsMobile disabled - inherit from itemsTablet option
+    });
+
+
+});
+
+
+/* =================================
+===  Nivo Lightbox              ====
+=================================== */
+$(document).ready(function () {
+
+    $('#screenshots a').nivoLightbox({
+        effect: 'fadeScale',
+    });
+
+});
+
   	this.courses = this.courseService.getCourses();
     console.log(this.courses);
   }
