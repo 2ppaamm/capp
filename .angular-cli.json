@@ -21,11 +21,31 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "ag",
       "styles": [
-        "styles.css"
+        "./css/bootstrap.min.css",
+        "styles.css",
+        "./css/animate.min.css",
+        "./css/nivo-lightbox.css",
+        "./css/owl.carousel.css",
+        "./css/owl.theme.css",
+        "./assets/elegant-icons/style.css",
+        "./css/responsive.css",
+        "./css/styles.css"
       ],
       "scripts": [
-        "js/jquery.stellar.min.js",
-        "js/custom.js"
+        "./js/bootstrap.min.js",
+        "./js/jquery.fitvids.js",
+        "./js/jquery.localScroll.min.js",
+        "./js/jquery.stellar.min.js",
+        "./js/jquery.nav.js",
+        "./js/jquery.scrollTo.min.js",
+        "./js/nivo-lightbox.min.js",
+        "./js/owl.carousel.min.js",
+        "./js/respond.min.js",
+        "./js/retina.min.js",
+        "./js/simple-expand.min.js",
+        "./js/smoothscroll.js",
+        "./js/wow.min.js",
+        "./js/custom.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
