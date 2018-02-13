@@ -25,6 +25,7 @@ import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.
 import { AuthService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './services/auth-guard.service';
+import { LandingComponent } from './landing/landing.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     AdminCourseEditComponent,
     AdminCourseDeleteComponent,
     AdminUserCreateComponent,
-    AdminUserListComponent
+    AdminUserListComponent,
+    LandingComponent
   ],
   imports: [
     routes,
@@ -52,15 +54,7 @@ import { AuthGuardService } from './services/auth-guard.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: () => {
-          return localStorage.getItem('token');
-        },
-        whitelistedDomains: ['localhost:4200', 'localhost']
-      }
-    })
+    FormsModule
   ],
   providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]

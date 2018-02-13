@@ -1,5 +1,6 @@
 import {Routes, RouterModule} from "@angular/router";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {LandingComponent} from "./landing/landing.component";
 import {ContactComponent} from "./contact/contact.component";
 import {AboutComponent} from "./about/about.component";
 import {ModuleWithProviders} from "@angular/core";
@@ -9,7 +10,8 @@ import {AuthGuardService} from './services/auth-guard.service';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo:'/dashboard', pathMatch: 'full'},
+  { path: '', redirectTo:'/', pathMatch: 'full'},
+  { path: '', component: LandingComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'about', component: AboutComponent},
