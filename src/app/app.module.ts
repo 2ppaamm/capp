@@ -26,6 +26,7 @@ import { AuthService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './services/auth-guard.service';
 import { LandingComponent } from './landing/landing.component';
+import { HomenavComponent } from './dashboard/homenav.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { LandingComponent } from './landing/landing.component';
     AdminCourseDeleteComponent,
     AdminUserCreateComponent,
     AdminUserListComponent,
-    LandingComponent
+    LandingComponent,
+    HomenavComponent
   ],
   imports: [
     routes,

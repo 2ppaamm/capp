@@ -24,11 +24,11 @@ export class AuthService {
   public handleAuthentication(): void {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '';
+        window.location.hash = '/dashboard';
         this.setSession(authResult);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
       } else if (err) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
         console.log(err);
       }
     });

@@ -23,8 +23,13 @@ export class LandingComponent implements OnInit {
 
 	$(".video-container").fitVids();
 
-    $(document).ready(function () {
+	/* =================================
+	===  OWL CROUSEL               ====
+	=================================== */
+	$(document).ready(function () {
+
 	    $("#feedbacks").owlCarousel({
+
 	        navigation: false, // Show next and prev buttons
 	        slideSpeed: 800,
 	        paginationSpeed: 400,
@@ -41,8 +46,9 @@ export class LandingComponent implements OnInit {
 	        itemsTablet: [600, 1], //2 items between 600 and 0
 	        itemsMobile: false // itemsMobile disabled - inherit from itemsTablet option
 	    });
-	});
 
+
+	});
 
 	/* =================================
 	===  Nivo Lightbox              ====
@@ -54,7 +60,6 @@ export class LandingComponent implements OnInit {
 	});
 
   	this.courses = this.courseService.getCourses();
-    console.log(this.courses);
   }
 
   selectCourse(course: Course) {
