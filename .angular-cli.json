@@ -26,10 +26,7 @@
         "./css/animate.min.css",
         "./css/nivo-lightbox.css",
         "./css/owl.carousel.css",
-        "./css/owl.theme.css",
-        "./assets/elegant-icons/style.css",
-        "./css/responsive.css",
-        "./css/styles.css"
+        "./css/owl.theme.css"
       ],
       "scripts": [
         "./js/bootstrap.min.js",

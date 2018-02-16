@@ -21,12 +21,13 @@ export class AuthService {
   public login(): void {
     this.auth0.authorize();
   }
+
   public handleAuthentication(): void {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '/dashboard';
+        window.location.hash = '/member';
         this.setSession(authResult);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/member']);
       } else if (err) {
         this.router.navigate(['/']);
         console.log(err);
@@ -57,8 +58,8 @@ export class AuthService {
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+  
   loggedIn() {
     return tokenNotExpired();
   }
-
 }
