@@ -272,7 +272,11 @@ h5 {
 /*---------------------------------------
    SECTION:  HOME                 
 -----------------------------------------*/
-
+header {
+        background: url('../images/bg-1.jpg') no-repeat center;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
 header .color-overlay {
     min-height: 900px;
 }
@@ -496,6 +500,12 @@ object {
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
+background: url('../images/bg-2.jpg') no-repeat center;
+-webkit-background-size: cover;
+        background-size: cover;
+}
+    
+.testimonials {
     color: #ffffff;
 }
 
@@ -668,6 +678,12 @@ object {
 /*---------------------------------------
    SECTION:  DOWNLOAD                 
 -----------------------------------------*/
+.download {
+background: url('../images/bg-3.jpg') no-repeat center;
+-webkit-background-size: cover;
+        background-size: cover;
+
+}
 
 .download {
     color: #ffffff;

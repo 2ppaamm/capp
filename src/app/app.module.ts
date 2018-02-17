@@ -29,6 +29,7 @@ import { LandingComponent } from './landing/landing.component';
 import { HomenavComponent } from './dashboard/homenav.component';
 import { MemberComponent } from './member/member.component';
 import { HouseComponent } from './member/house/house.component';
+import { FooterComponent } from './footer.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { HouseComponent } from './member/house/house.component';
     LandingComponent,
     HomenavComponent,
     MemberComponent,
-    HouseComponent
+    HouseComponent,
+    FooterComponent
   ],
   imports: [
     routes,

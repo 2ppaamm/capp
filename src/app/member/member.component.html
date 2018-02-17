@@ -28,4 +28,36 @@
 <!-- /END CONTAINER -->
 
 </section>
+<!-- /END FEATURES SECTION --><!-- =========================
+     Enrolled Classes
+============================== -->
+<section class="enrolled" id="enrolled">
+
+<div class="container">
+	
+	<!-- SECTION HEADER -->
+	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		
+		<!-- SECTION TITLE -->
+		<h2 class="dark-text">Recommended Courses</h2>
+	<div class="row">
+		<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
+		<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>
+			</div>
+		
+		<div class="colored-line">
+		</div>
+		
+	</div>
+	<!-- /END SECTION HEADER -->
+	
+	<div class="row">
+	</div>
+	<!-- /END ROW -->
+	
+</div>
+<!-- /END CONTAINER -->
+
+</section>
 <!-- /END FEATURES SECTION -->
+<div></div>
