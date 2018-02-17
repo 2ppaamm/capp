@@ -1,0 +1,13 @@
+<div *ngIf="selectedHouse">
+  <div class="container house-detail">
+    <div class="row">
+      <div class="col-sm-8 col-xs-12">
+        <img [src]="selectedHouse.image" class="img-responsive">
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <h1>{{selectedHouse.house}}</h1>
+        <p>{{selectedHouse.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

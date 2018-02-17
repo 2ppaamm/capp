@@ -14,7 +14,8 @@
 		<div class="colored-line">
 		</div>
 		<div class="row">
-			<ag-house-list></ag-house-list>
+			<ag-house-detail [selectedHouse] = "selectedHouse"></ag-house-detail>
+			<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
 		</div>
 		
 	</div>

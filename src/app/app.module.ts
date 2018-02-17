@@ -31,6 +31,7 @@ import { MemberComponent } from './member/member.component';
 import { HouseComponent } from './member/house/house.component';
 import { FooterComponent } from './footer.component';
 import { HouseListComponent } from './member/house-list/house-list.component';
+import { HouseDetailComponent } from './member/house-detail/house-detail.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { HouseListComponent } from './member/house-list/house-list.component';
     MemberComponent,
     HouseComponent,
     FooterComponent,
-    HouseListComponent
+    HouseListComponent,
+    HouseDetailComponent
   ],
   imports: [
     routes,

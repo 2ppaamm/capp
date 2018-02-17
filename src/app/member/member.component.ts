@@ -9,11 +9,11 @@ import { House } from '../models/house';
   styleUrls: ['./member.component.css']
 })
 export class MemberComponent implements OnInit {
+  selectedHouse: House;
 
   dashboard: any;
 
   houses: any;
-  selectedHouse: House;
 
   courses: any;
   selectedCourse: Course;
@@ -21,7 +21,7 @@ export class MemberComponent implements OnInit {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.dashboard = this.dashboardService.getDashboard();
+    this.dashboardService.getDashboard();
   	this.courses = this.dashboardService.getDashboard();
   }
 
@@ -29,8 +29,11 @@ export class MemberComponent implements OnInit {
     this.selectedCourse = course;
   }
 
+  selectHouse(house: House) {
+    this.selectedHouse = house;
+  }
+
   onSelect(house: House) {
   	this.selectedHouse = house;
   }
-
 }
