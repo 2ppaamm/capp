@@ -7,12 +7,14 @@ import {ModuleWithProviders} from "@angular/core";
 import {AdminComponent} from './admin/admin.component';
 import {adminRoutes} from './admin/admin.routes';
 import {AuthGuardService} from './services/auth-guard.service';
+import {MemberComponent} from './member/member.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo:'/', pathMatch: 'full'},
   { path: '', component: LandingComponent},
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'member', component: MemberComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},

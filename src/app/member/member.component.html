@@ -1,5 +1,31 @@
-<h2>Enrolled Classes</h2>
+<!-- =========================
+     Enrolled Classes
+============================== -->
+<section class="enrolled" id="enrolled">
+
+<div class="container">
+	
+	<!-- SECTION HEADER -->
+	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		
+		<!-- SECTION TITLE -->
+		<h2 class="dark-text">Enrolled classes</h2>
 	<div class="row">
 		<ag-house *ngFor="let house of houses | async" (click)="onSelect(house)"></ag-house>
 	</div>
-<h2>Recommended Courses</h2>
+		
+		<div class="colored-line">
+		</div>
+		
+	</div>
+	<!-- /END SECTION HEADER -->
+	
+	<div class="row">
+	</div>
+	<!-- /END ROW -->
+	
+</div>
+<!-- /END CONTAINER -->
+
+</section>
+<!-- /END FEATURES SECTION -->

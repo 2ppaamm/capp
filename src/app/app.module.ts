@@ -27,6 +27,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './services/auth-guard.service';
 import { LandingComponent } from './landing/landing.component';
 import { HomenavComponent } from './dashboard/homenav.component';
+import { MemberComponent } from './member/member.component';
+import { HouseComponent } from './member/house/house.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { HomenavComponent } from './dashboard/homenav.component';
     AdminUserCreateComponent,
     AdminUserListComponent,
     LandingComponent,
-    HomenavComponent
+    HomenavComponent,
+    MemberComponent,
+    HouseComponent
   ],
   imports: [
     routes,
