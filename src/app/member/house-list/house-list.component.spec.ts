@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { houselistComponent } from './houselist.component';
+import { HouseListComponent } from './house-list.component';
 
-describe('houselistComponent', () => {
-  let component: houselistComponent;
-  let fixture: ComponentFixture<houselistComponent>;
+describe('HouseListComponent', () => {
+  let component: HouseListComponent;
+  let fixture: ComponentFixture<HouseListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ houselistComponent ]
+      declarations: [ HouseListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(houselistComponent);
+    fixture = TestBed.createComponent(HouseListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

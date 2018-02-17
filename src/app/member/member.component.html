@@ -10,20 +10,15 @@
 		
 		<!-- SECTION TITLE -->
 		<h2 class="dark-text">Enrolled classes</h2>
-	<div class="row">
-		<ag-house *ngFor="let house of houses | async" (click)="onSelect(house)"></ag-house>
-	</div>
 		
 		<div class="colored-line">
 		</div>
+		<div class="row">
+			<ag-house-list></ag-house-list>
+		</div>
 		
 	</div>
-	<!-- /END SECTION HEADER -->
-	
-	<div class="row">
-	</div>
-	<!-- /END ROW -->
-	
+	<!-- /END SECTION HEADER -->	
 </div>
 <!-- /END CONTAINER -->
 
@@ -31,7 +26,7 @@
 <!-- /END FEATURES SECTION --><!-- =========================
      Enrolled Classes
 ============================== -->
-<section class="enrolled" id="enrolled">
+<section class="enrolled" id="recommendedcourses">
 
 <div class="container">
 	
@@ -40,24 +35,19 @@
 		
 		<!-- SECTION TITLE -->
 		<h2 class="dark-text">Recommended Courses</h2>
-	<div class="row">
-		<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
-		<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>
-			</div>
-		
 		<div class="colored-line">
 		</div>
+		<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+			<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
+			<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>					
+		</div>
+		
 		
 	</div>
 	<!-- /END SECTION HEADER -->
-	
-	<div class="row">
-	</div>
-	<!-- /END ROW -->
 	
 </div>
 <!-- /END CONTAINER -->
 
 </section>
 <!-- /END FEATURES SECTION -->
-<div></div>

@@ -18,7 +18,7 @@ export class DashboardService {
 
   getDashboard(): Observable<any> {
   	return this.http.get('http://localhost/api/protected')
-   	.map((response) => response)	      
+   	.map((response) => response['houses'])	      
    	.catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
   }
 

@@ -10,17 +10,27 @@ import { House } from '../models/house';
 })
 export class MemberComponent implements OnInit {
 
+  dashboard: any;
+
   houses: any;
   selectedHouse: House;
+
+  courses: any;
+  selectedCourse: Course;
 
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-  	this.houses = this.dashboardService.getDashboard();
+    this.dashboard = this.dashboardService.getDashboard();
+  	this.courses = this.dashboardService.getDashboard();
+  }
+
+  selectCourse(course: Course) {
+    this.selectedCourse = course;
   }
 
   onSelect(house: House) {
-	this.selectedHouse = house;
+  	this.selectedHouse = house;
   }
 
 }

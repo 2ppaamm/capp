@@ -30,6 +30,7 @@ import { HomenavComponent } from './dashboard/homenav.component';
 import { MemberComponent } from './member/member.component';
 import { HouseComponent } from './member/house/house.component';
 import { FooterComponent } from './footer.component';
+import { HouseListComponent } from './member/house-list/house-list.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { FooterComponent } from './footer.component';
     HomenavComponent,
     MemberComponent,
     HouseComponent,
-    FooterComponent
+    FooterComponent,
+    HouseListComponent
   ],
   imports: [
     routes,
