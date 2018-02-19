@@ -11,7 +11,7 @@ export class DropdownDirective {
     return this.isOpen;
   }
 
-  @HostListener('click') open() {
+  @HostListener('mouseover') open() {
     this.isOpen = true;
   }
 

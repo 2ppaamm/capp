@@ -1,13 +1,83 @@
 <div *ngIf="selectedHouse">
   <div class="container house-detail">
     <div class="row">
-      <div class="col-sm-8 col-xs-12">
-        <img [src]="selectedHouse.image" class="img-responsive">
-      </div>
-      <div class="col-sm-4 col-xs-12">
-        <h1>{{selectedHouse.house}}</h1>
-        <p>{{selectedHouse.description}}</p>
-      </div>
+    	<div class="col-sm-4">
+		  <img [src]="selectedHouse.image" class="img-responsive" />
+		</div>
+		<br>
+		<div class="col-sm-8">
+			<div class="chart-block">
+			   <div id="chartdiv1" style="width:100%; height:220px;"></div>
+			   <div id="chartdiv2" style="width:100%; height:220px;"></div>
+			</div>
+		</div>
     </div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3>
+								{{selectedHouse.house}} Syllabus
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="m-section">
+						<div class="m-section__content">
+							<table class="table m-table">
+								<thead>
+									<tr>
+										<td>
+											Track
+										</td>
+										<td>
+											Skills
+										</td>
+										<td>
+											Score
+										</td>
+										<td>
+											Action
+										</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="m-table__row--active" *ngFor="let track of selectedHouse.tracks">
+										<th scope="row">
+											{{track.track}}
+										</th>
+										<td>
+											<p *ngFor="let skill of track.skills">{{skill.skill}}</p>
+										</td>
+										<td>
+											400
+										</td>
+										<td>
+											<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+												<div class="btn-group" role="group" aria-label="First group">
+													<button type="button" class="m-btn btn btn-warning">
+														Quiz
+													</button>
+													<button type="button" class="m-btn btn btn-info">
+														Video
+													</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!--end::Section-->
+				</div>
+				<!--end::Form-->
+			</div>			
+		</div>
+	</div>
   </div>
 </div>

@@ -273,8 +273,8 @@
 	<!-- /END SECTION HEADER -->
 	
 	<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-		<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
 		<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>
+		<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
 		
 		
 	</div>

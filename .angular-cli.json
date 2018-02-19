@@ -45,7 +45,8 @@
         "./js/simple-expand.min.js",
         "./js/smoothscroll.js",
         "./js/wow.min.js",
-        "./js/custom.js"
+        "./js/custom.js",
+        "./js/charts.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

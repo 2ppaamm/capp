@@ -10,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class HouseListComponent implements OnInit {
   dashboard: any;
-  houses: Observable<House[]>;
+  houses: any;
   selectedHouse: House;
 
   @Output() selectedEvent: EventEmitter<House> = new EventEmitter<House>();
@@ -18,6 +18,7 @@ export class HouseListComponent implements OnInit {
 
   ngOnInit() {
     this.houses = this.dashboardService.getDashboard();
+    console.log(this.houses);
   }
 
   onSelect(house: House) {
