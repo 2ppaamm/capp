@@ -7,14 +7,13 @@
 	
 	<!-- SECTION HEADER -->
 	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-		
 		<!-- SECTION TITLE -->
+    	<ag-house-detail [selectedHouse] = "selectedHouse"></ag-house-detail>
 		<h2 class="dark-text">Enrolled classes</h2>
 		
 		<div class="colored-line">
 		</div>
 		<div class="row">
-			<ag-house-detail [selectedHouse] = "selectedHouse"></ag-house-detail>
 			<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
 		</div>
 		

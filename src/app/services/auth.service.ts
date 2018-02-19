@@ -13,7 +13,7 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://pamelalim.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200',
-    scope: 'openid email name picture'
+    scope: 'openid email firstname picture'
   });
 
   constructor(public router: Router) {}
