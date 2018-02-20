@@ -10,7 +10,7 @@ export class DashboardService {
   constructor(private http: HttpClient) { }
 
   getHouses(): Observable<any> {
-    return this.http.get('http://localhost/api/protected')
+    return this.http.get('http://localhost/enrols/users')
     .map((response) => response['houses'])        
     .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
   }
