@@ -1,14 +1,14 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { House } from '../../models/house';
 import { DashboardService } from '../../services/dashboard.service';
 import {Observable} from 'rxjs/Observable';
+import { House } from '../../models/house';
 
 @Component({
-  selector: 'ag-house-list',
-  templateUrl: './house-list.component.html',
-  styleUrls: ['./house-list.component.css']
+  selector: 'ag-teach-list',
+  templateUrl: './teach-list.component.html',
+  styleUrls: ['./teach-list.component.css']
 })
-export class HouseListComponent implements OnInit {
+export class TeachListComponent implements OnInit {
   houses: any;
   selectedHouse: House;
 
@@ -16,11 +16,10 @@ export class HouseListComponent implements OnInit {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.houses = this.dashboardService.getHouses();
+    this.houses = this.dashboardService.getTeach();
   }
 
   onSelect(house: House) {
   	this.selectedEvent.emit(house);
   }
-
 }

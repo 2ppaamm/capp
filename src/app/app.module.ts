@@ -33,6 +33,9 @@ import { FooterComponent } from './footer.component';
 import { HouseListComponent } from './member/house-list/house-list.component';
 import { HouseDetailComponent } from './member/house-detail/house-detail.component';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { TeachListComponent } from './member/teach-list/teach-list.component';
+import { TeachComponent } from './member/teach-list/teach.component';
+import { TeachDetailComponent } from './member/teach-list/teach-detail/teach-detail.component';
 
 
 @NgModule({
@@ -60,7 +63,10 @@ import { DropdownDirective } from './directives/dropdown.directive';
     FooterComponent,
     HouseListComponent,
     HouseDetailComponent,
-    DropdownDirective
+    DropdownDirective,
+    TeachListComponent,
+    TeachComponent,
+    TeachDetailComponent
   ],
   imports: [
     routes,

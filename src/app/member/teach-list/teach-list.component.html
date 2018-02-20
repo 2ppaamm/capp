@@ -1,0 +1,7 @@
+<ag-teach-detail [selectedTeach]="selectedTeach"></ag-teach-detail>
+
+<div class="container">
+      <div class="row">
+           <ag-teach *ngFor="let house of houses | async" [house]="house" (click)="onSelect(house)"></ag-teach>
+      </div>
+</div>
