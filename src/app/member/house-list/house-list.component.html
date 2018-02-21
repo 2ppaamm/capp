@@ -1,6 +1,7 @@
-<ag-house-detail [selectedHouse]="selectedHouse"></ag-house-detail>
-
-<div class="container">
+<div *ngIf="selectedHouse">
+    <ag-house-detail [selectedHouse]="selectedHouse"></ag-house-detail>
+</div>
+<div class="container" *ngIf="houses">
       <div class="row">
            <ag-house *ngFor="let house of houses | async" [house]="house" (click)="onSelect(house)"></ag-house>
       </div>
