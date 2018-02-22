@@ -23,6 +23,77 @@
 					<div class="m-portlet__head-caption">
 						<div class="m-portlet__head-title">
 							<h3>
+								{{selectedTeach.house}} Class List
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="m-section">
+						<div class="m-section__content">
+							<table class="table m-table">
+								<thead>
+									<tr>
+										<td>Student</td>
+										<td>Name</td>
+										<td>Maxile Level</td>
+										<td>Game Level</td>
+										<td>Field Level</td>
+										<td>Tracks Passed</td>
+										<td>Action</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="m-table__row--active" *ngFor="let student of selectedTeach.enrolled_students">
+										<td scope="row">
+											<img src="{{student.image}}"  width="75"/>
+										</td>
+										<td>
+											{{student.firstname}} {{student.lastname}}
+										</td>
+										<td>{{student.maxile_level}}</td>
+										<td>{{student.game_level}}</td>
+										<td>
+											<ul>
+												<li *ngFor="let level of student.field_maxile">{{level}}</li>
+											</ul>
+										</td>
+										<td>
+											<ul>
+												<li *ngFor="let track of student.tracks_passed">{{track.track}}</li>
+											</ul>
+										</td>
+										<td>
+											<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+												<div class="btn-group" role="group" aria-label="First group">
+													<button type="button" class="m-btn btn btn-info">
+														Details
+													</button>
+													<button type="button" class="m-btn btn btn-danger">
+														Adjust Results
+													</button>
+
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!--end::Section-->
+				</div>
+				<!--end::Form-->
+			</div>			
+		</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3>
 								{{selectedTeach.house}} Syllabus
 							</h3>
 						</div>
