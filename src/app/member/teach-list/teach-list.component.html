@@ -1,7 +1,21 @@
-<ag-teach-detail [selectedTeach]="selectedTeach"></ag-teach-detail>
-
-<div class="container">
-      <div class="row">
-           <ag-teach *ngFor="let house of houses | async" [house]="house" (click)="onSelect(house)"></ag-teach>
-      </div>
+<div class="container" *ngIf =" (houses | async)?.length>0">
+	
+	<!-- SECTION HEADER -->
+	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		<!-- SECTION TITLE -->
+		<h2 class="dark-text">Teaching classes</h2>
+		
+		<div class="colored-line">
+		</div>
+		<div class="row">
+			<div class="container">
+			      <div class="row">
+			           <ag-teach *ngFor="let house of houses | async" [house]="house" (click)="onSelect(house)"></ag-teach>
+			      </div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- /END SECTION HEADER -->	
 </div>
+<!-- /END CONTAINER -->

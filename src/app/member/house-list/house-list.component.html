@@ -1,8 +1,21 @@
-<div *ngIf="selectedHouse">
-    <ag-house-detail [selectedHouse]="selectedHouse"></ag-house-detail>
+<div class="container" *ngIf =" (houses | async)?.length>0">
+	
+	<!-- SECTION HEADER -->
+	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		<!-- SECTION TITLE -->
+		<h2 class="dark-text">Enrolled classes</h2>
+		
+		<div class="colored-line">
+		</div>
+		<div class="row">
+			<div class="container">
+			      <div class="row">
+			           <ag-house *ngFor="let house of houses | async" [house]="house" (click)="onSelect(house)"></ag-house>
+			      </div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- /END SECTION HEADER -->	
 </div>
-<div class="container" *ngIf="houses">
-      <div class="row">
-           <ag-house *ngFor="let house of houses | async" [house]="house" (click)="onSelect(house)"></ag-house>
-      </div>
-</div>
+<!-- /END CONTAINER -->

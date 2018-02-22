@@ -1,13 +1,16 @@
 <div *ngIf="selectedHouse">
   <div class="container house-detail">
+    	<h1>{{selectedHouse.house}} <span>Student Page</span></h1>
+		<p>{{selectedHouse.description}}</p>				
+		<div class="colored-line">
+		</div>
+
     <div class="row">
     	<div class="col-sm-4">
 		  <img [src]="selectedHouse.image" class="img-responsive" />
 		</div>
 		<br>
 		<div class="col-sm-8">
-			<h2>{{selectedHouse.house}}</h2>
-			<p>{{selectedHouse.description}}</p>				
 			<div class="chart-block">
 			   <div id="chartdiv1" style="width:100%; height:220px;"></div>
 			   <div id="chartdiv2" style="width:100%; height:220px;"></div>

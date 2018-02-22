@@ -19,8 +19,8 @@ export class DashboardService {
     .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
   }
   getTeach(): Observable<any> {
-    return this.http.get('http://localhost/api/protected')
-    .map((response) => response['teach_info']['houses'])        
+    return this.http.get('http://localhost/enrols/teachers')
+    .map((response) => response['houses'])        
     .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
   }
 

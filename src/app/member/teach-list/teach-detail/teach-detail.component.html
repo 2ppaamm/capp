@@ -1,13 +1,15 @@
 <div *ngIf="selectedTeach">
   <div class="container house-detail">
+    	<h1>{{selectedTeach.house}} <span>Instructor's Page</span></h1>
+		<p>{{selectedTeach.description}}</p>				
+		<div class="colored-line">
+		</div>
     <div class="row">
     	<div class="col-sm-4">
 		  <img [src]="selectedTeach.image" class="img-responsive" />
 		</div>
 		<br>
 		<div class="col-sm-8">
-			<h2>{{selectedTeach.house}}</h2>
-			<p>{{selectedTeach.description}}</p>				
 			<div class="chart-block">
 			   <div id="chartdiv1" style="width:100%; height:220px;"></div>
 			   <div id="chartdiv2" style="width:100%; height:220px;"></div>
@@ -34,13 +36,20 @@
 								<thead>
 									<tr>
 										<td>
-											Track
+											Track 
+											<button type="button" class="m-btn btn">
+												+
+											</button>
+
 										</td>
+										<td>
+											Description
+										</td>
+										<td>Status</td>
+										<td>Field</td>
+										<td>Level</td>
 										<td>
 											Skills
-										</td>
-										<td>
-											Score
 										</td>
 										<td>
 											Action
@@ -49,24 +58,30 @@
 								</thead>
 								<tbody>
 									<tr class="m-table__row--active" *ngFor="let track of selectedTeach.tracks">
-										<th scope="row">
+										<td scope="row">
 											{{track.track}}
-										</th>
-										<td>
-											<p *ngFor="let skill of track.skills">{{skill.skill}}</p>
 										</td>
 										<td>
-											400
+											{{track.description}}
+										</td>
+										<td>{{track.status.status}}</td>
+										<td>{{track.field.field}}</td>
+										<td>{{track.level.level}}</td>
+										<td>
+											<ul>
+												<li *ngFor="let skill of track.skills">{{skill.skill}}</li>
+											</ul>
 										</td>
 										<td>
 											<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 												<div class="btn-group" role="group" aria-label="First group">
+													<button type="button" class="m-btn btn btn-primary">
+														Edit
+													</button>
 													<button type="button" class="m-btn btn btn-warning">
-														Quiz
+														Delete
 													</button>
-													<button type="button" class="m-btn btn btn-info">
-														Video
-													</button>
+
 												</div>
 											</div>
 										</td>

@@ -2,41 +2,21 @@
      Enrolled Classes
 ============================== -->
 <section class="enrolled" id="enrolled">
-
-<div class="container">
-	
-	<!-- SECTION HEADER -->
-	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-		<!-- SECTION TITLE -->
-    	<ag-house-detail [selectedHouse] = "selectedHouse"></ag-house-detail>
-		<h2 class="dark-text">Enrolled classes</h2>
-		
-		<div class="colored-line">
-		</div>
-		<div class="row">
-			<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
-		</div>
-		
-	</div>
-	<!-- /END SECTION HEADER -->	
-</div>
-<!-- /END CONTAINER -->
-
+   	<ag-house-detail [selectedHouse] = "selectedHouse"></ag-house-detail>
+	<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
 </section>
-<!-- /END FEATURES SECTION -->
+<!-- /END ENROLLED SECTION -->
 <!-- =========================
      Teaching Classes
 ============================== -->
 <section class="enrolled" id="teaching">
-
-<div class="container">
-</div>
-<!-- /END CONTAINER -->
-
+    <ag-teach-detail [selectedTeach] = "selectedTeach"></ag-teach-detail>
+	<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
 </section>
-<!-- /END FEATURES SECTION -->
+<!-- /END TEACHING SECION -->
+
 <!-- =========================
-     Enrolled Classes
+     Courses
 ============================== -->
 <section class="enrolled" id="recommendedcourses">
 
