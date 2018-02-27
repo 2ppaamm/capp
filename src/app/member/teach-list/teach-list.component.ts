@@ -10,7 +10,7 @@ import { House } from '../../models/house';
 })
 export class TeachListComponent implements OnInit {
   houses: any;
-  selectedHouse: House;
+  selectedTeach: House;
 
   @Output() selectedEvent: EventEmitter<House> = new EventEmitter<House>();
   constructor(private dashboardService: DashboardService) { }

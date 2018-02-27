@@ -4,18 +4,108 @@
 		<p>{{selectedTeach.description}}</p>				
 		<div class="colored-line">
 		</div>
-    <div class="row">
-    	<div class="col-sm-4">
-		  <img [src]="selectedTeach.image" class="img-responsive" />
-		</div>
-		<br>
-		<div class="col-sm-8">
-			<div class="chart-block">
-			   <div id="chartdiv1" style="width:100%; height:220px;"></div>
-			   <div id="chartdiv2" style="width:100%; height:220px;"></div>
+	<!--End::Section-->  <!--Begin::Section-->
+	<div class="m-portlet">
+		<div class="m-portlet__body  m-portlet__body--no-padding">
+			<div class="row results m-row--no-padding m-row--col-separator-xl">
+				<div class="col-xl-4">
+					<!--begin:: Widgets/Stats2-1 -->
+					<div class="m-widget1">
+						<div class="m-widget1__item">
+							<div class="row m-row--no-padding align-items-center">
+								<div class="col">
+									<h3 class="m-widget1__title">
+										Average Maxile Score
+									</h3>
+									<span class="m-widget1__desc">
+										Class Mean Maxile
+									</span>
+								</div>
+								<div class="col m--align-right">
+									<span class="m-widget1__number m--font-brand">
+										{{selectedTeach.average_progress}}
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="m-widget1__item">
+							<div class="row m-row--no-padding align-items-center">
+								<div class="col">
+									<h3 class="m-widget1__title">
+										Lowest Score
+									</h3>
+									<span class="m-widget1__desc">
+										Class Lowest Maxile
+									</span>
+								</div>
+								<div class="col m--align-right">
+									<span class="m-widget1__number m--font-danger">
+										{{selectedTeach.lowest_progress}}
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="m-widget1__item">
+							<div class="row m-row--no-padding align-items-center">
+								<div class="col">
+									<h3 class="m-widget1__title">
+										Highest Score
+									</h3>
+									<span class="m-widget1__desc">
+										Class Highest Maxile
+									</span>
+								</div>
+								<div class="col m--align-right">
+									<span class="m-widget1__number m--font-success">
+										{{selectedTeach.highest_progress}}
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end:: Widgets/Stats2-1 -->
+				</div>
+				<div class="col-xl-4">
+					<!--begin:: Widgets/Daily Sales-->
+					<div class="m-widget14">
+						<div class="m-widget14__header m--margin-bottom-30">
+							<h3 class="m-widget14__title">
+								Track Maxile
+							</h3>
+							<span class="m-widget14__desc">
+								Track vs Class Average Maxile
+							</span>
+						</div>
+						<div class="m-widget14__chart" style="height:120px;">
+							<div id="classchart{{selectedTeach.id}}" [style.width.%]="100" [style.height.px]="500"></div>
+						</div>
+					</div>
+					<!--end:: Widgets/Daily Sales-->
+				</div>
+				<div class="col-xl-4">
+					<!--begin:: Widgets/Profit Share-->
+					<div class="m-widget14">
+						<div class="m-widget14__header">
+							<h3 class="m-widget14__title">
+								Student Performance
+							</h3>
+							<span class="m-widget14__desc">
+								Class Performance
+							</span>
+						</div>
+						<div class="row  align-items-center">
+							<div class="col">
+								<ag-chart [selectedTeach] = "selectedTeach"></ag-chart>
+							</div>
+						</div>
+					</div>
+					<!--end:: Widgets/Profit Share-->
+				</div>
 			</div>
 		</div>
-    </div>
+	</div>
+	<!--End::Section-->  <!--Begin::Section-->
+
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="m-portlet">
@@ -41,7 +131,6 @@
 										<td>Game Level</td>
 										<td>Field Level</td>
 										<td>Tracks Passed</td>
-										<td>Action</td>
 									</tr>
 								</thead>
 								<tbody>
@@ -63,19 +152,6 @@
 											<ul>
 												<li *ngFor="let track of student.tracks_passed">{{track.track}}</li>
 											</ul>
-										</td>
-										<td>
-											<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-												<div class="btn-group" role="group" aria-label="First group">
-													<button type="button" class="m-btn btn btn-info">
-														Details
-													</button>
-													<button type="button" class="m-btn btn btn-danger">
-														Adjust Results
-													</button>
-
-												</div>
-											</div>
 										</td>
 									</tr>
 								</tbody>

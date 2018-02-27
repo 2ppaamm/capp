@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { DashboardService } from '../services/dashboard.service';
 
 @Component({
   selector: 'ag-homenav',
@@ -7,10 +8,12 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./homenav.component.css']
 })
 export class HomenavComponent implements OnInit {
+  user: any;
+  constructor(private authService:AuthService, private dashboardService:DashboardService) { }
 
-  constructor(private authService:AuthService) { }
- 
-  ngOnInit() {}
+  ngOnInit() {
+      this.user = this.dashboardService.getUser();
+  }
 
   public login(){
   	this.authService.login();

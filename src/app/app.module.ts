@@ -36,7 +36,8 @@ import { DropdownDirective } from './directives/dropdown.directive';
 import { TeachListComponent } from './member/teach-list/teach-list.component';
 import { TeachComponent } from './member/teach-list/teach.component';
 import { TeachDetailComponent } from './member/teach-list/teach-detail/teach-detail.component';
-
+import { ChartsModule } from 'ng2-charts';
+import { ChartComponent } from './member/teach-list/teach-detail/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { TeachDetailComponent } from './member/teach-list/teach-detail/teach-det
     DropdownDirective,
     TeachListComponent,
     TeachComponent,
-    TeachDetailComponent
+    TeachDetailComponent,
+    ChartComponent
   ],
   imports: [
     routes,
@@ -74,7 +76,16 @@ import { TeachDetailComponent } from './member/teach-list/teach-detail/teach-det
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+        whitelistedDomains: ['localhost:4200', 'localhost']
+      }
+    }),
+    ChartsModule    
   ],
   providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
