@@ -73,6 +73,31 @@ DEEP COLOR CODE: #520000
     background: #960000;
 }
 
+#house-detail h2 {
+	color: #960000;
+}
+
+#house-detail .panel-heading h3 a{
+	color: #520000;
+}
+
+#house-detail .btn-video {
+	background:#bdbdbd;
+}
+
+#house-detail .btn-quiz {
+	background: #ffffff
+}
+
+#house-detail .progress-bar{
+	background-color: #960000;
+	height: 1 em;
+}
+
+#house-detail th, #house-detail td {
+	    text-align: left;
+}
+
 footer .contact-button {
     border: 2px solid #960000;
     color: #960000;

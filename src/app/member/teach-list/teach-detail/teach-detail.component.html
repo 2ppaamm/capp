@@ -4,244 +4,235 @@
 		<p>{{selectedTeach.description}}</p>				
 		<div class="colored-line">
 		</div>
-	<!--End::Section-->  <!--Begin::Section-->
-	<div class="m-portlet">
-		<div class="m-portlet__body  m-portlet__body--no-padding">
-			<div class="row results m-row--no-padding m-row--col-separator-xl">
-				<div class="col-xl-4">
-					<!--begin:: Widgets/Stats2-1 -->
-					<div class="m-widget1">
-						<div class="m-widget1__item">
-							<div class="row m-row--no-padding align-items-center">
-								<div class="col">
-									<h3 class="m-widget1__title">
-										Average Maxile Score
-									</h3>
-									<span class="m-widget1__desc">
-										Class Mean Maxile
-									</span>
+		<!--End::Section-->  <!--Begin::Section-->
+		<div class="m-portlet">
+			<div class="m-portlet__body  m-portlet__body--no-padding">
+				<div class="row results m-row--no-padding m-row--col-separator-xl">
+					<div class="col-xl-3">
+						<!--begin:: Widgets/Stats2-1 -->
+						<div class="m-widget1">
+							<div class="m-widget1__item">
+								<div class="row m-row--no-padding align-items-center">
+									<div class="col">
+										<h3 class="m-widget1__title">
+											Average Maxile Score
+										</h3>
+									</div>
+									<div class="col m--align-right">
+										<span class="m-widget1__number m--font-brand">
+											{{selectedTeach.average_progress}}
+										</span>
+									</div>
 								</div>
-								<div class="col m--align-right">
-									<span class="m-widget1__number m--font-brand">
-										{{selectedTeach.average_progress}}
-									</span>
+							</div>
+							<div class="m-widget1__item">
+								<div class="row m-row--no-padding align-items-center">
+									<div class="col">
+										<h3 class="m-widget1__title">
+											Lowest Score
+										</h3>
+									</div>
+									<div class="col m--align-right">
+										<span class="m-widget1__number m--font-danger">
+											{{selectedTeach.lowest_progress}}
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="m-widget1__item">
+								<div class="row m-row--no-padding align-items-center">
+									<div class="col">
+										<h3 class="m-widget1__title">
+											Highest Score
+										</h3>
+									</div>
+									<div class="col m--align-right">
+										<span class="m-widget1__number m--font-success">
+											{{selectedTeach.highest_progress}}
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="m-widget1__item">
-							<div class="row m-row--no-padding align-items-center">
-								<div class="col">
-									<h3 class="m-widget1__title">
-										Lowest Score
-									</h3>
-									<span class="m-widget1__desc">
-										Class Lowest Maxile
-									</span>
-								</div>
-								<div class="col m--align-right">
-									<span class="m-widget1__number m--font-danger">
-										{{selectedTeach.lowest_progress}}
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="m-widget1__item">
-							<div class="row m-row--no-padding align-items-center">
-								<div class="col">
-									<h3 class="m-widget1__title">
-										Highest Score
-									</h3>
-									<span class="m-widget1__desc">
-										Class Highest Maxile
-									</span>
-								</div>
-								<div class="col m--align-right">
-									<span class="m-widget1__number m--font-success">
-										{{selectedTeach.highest_progress}}
-									</span>
-								</div>
-							</div>
-						</div>
+						<!--end:: Widgets/Stats2-1 -->
 					</div>
-					<!--end:: Widgets/Stats2-1 -->
-				</div>
-				<div class="col-xl-4">
-					<!--begin:: Widgets/Daily Sales-->
-					<div class="m-widget14">
-						<div class="m-widget14__header m--margin-bottom-30">
-							<h3 class="m-widget14__title">
-								Track Maxile
-							</h3>
-							<span class="m-widget14__desc">
-								Track vs Class Average Maxile
-							</span>
-						</div>
-						<div class="m-widget14__chart" style="height:120px;">
-							<div id="classchart{{selectedTeach.id}}" [style.width.%]="100" [style.height.px]="500"></div>
-						</div>
-					</div>
-					<!--end:: Widgets/Daily Sales-->
-				</div>
-				<div class="col-xl-4">
-					<!--begin:: Widgets/Profit Share-->
-					<div class="m-widget14">
-						<div class="m-widget14__header">
-							<h3 class="m-widget14__title">
-								Student Performance
-							</h3>
-							<span class="m-widget14__desc">
-								Class Performance
-							</span>
-						</div>
-						<div class="row  align-items-center">
-							<div class="col">
-								<ag-chart [selectedTeach] = "selectedTeach"></ag-chart>
+					<div class="col-xl-6">
+						<!--begin:: Widgets/Daily Sales-->
+						<div class="m-widget14">
+							<div class="m-widget14__header m--margin-bottom-30">
+								<h3 class="m-widget14__title">
+									Track Maxile
+								</h3>
+								<span class="m-widget14__desc">
+									Track vs Class Average Maxile
+								</span>
+							</div>
+							<div class="m-widget14__chart" style="height:120px;">
+								<ag-barchart [tracksdata] = "selectedTeach.tracksdata" [barChartData]="selectedTeach.barchartdata"></ag-barchart>
 							</div>
 						</div>
+						<!--end:: Widgets/Daily Sales-->
 					</div>
-					<!--end:: Widgets/Profit Share-->
+					<div class="col-xl-3">
+						<!--begin:: Widgets/Profit Share-->
+						<div class="m-widget14">
+							<div class="m-widget14__header">
+								<h3 class="m-widget14__title">
+									Student Performance
+								</h3>
+								<span class="m-widget14__desc">
+									Class Performance
+								</span>
+							</div>
+							<div class="row  align-items-center">
+								<div class="col">
+									<ag-chart [chartdata] = "selectedTeach.chartdata"></ag-chart>
+								</div>
+							</div>
+						</div>
+						<!--end:: Widgets/Profit Share-->
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<!--End::Section-->  <!--Begin::Section-->
 
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="m-portlet">
-				<div class="m-portlet__head">
-					<div class="m-portlet__head-caption">
-						<div class="m-portlet__head-title">
-							<h3>
-								{{selectedTeach.house}} Class List
-							</h3>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="m-portlet">
+					<div class="m-portlet__head">
+						<div class="m-portlet__head-caption">
+							<div class="m-portlet__head-title">
+								<h3>
+									{{selectedTeach.house}} Class List
+								</h3>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="m-portlet__body">
-					<!--begin::Section-->
-					<div class="m-section">
-						<div class="m-section__content">
-							<table class="table m-table">
-								<thead>
-									<tr>
-										<td>Student</td>
-										<td>Name</td>
-										<td>Maxile Level</td>
-										<td>Game Level</td>
-										<td>Field Level</td>
-										<td>Tracks Passed</td>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="m-table__row--active" *ngFor="let student of selectedTeach.enrolled_students">
-										<td scope="row">
-											<img src="{{student.image}}"  width="75"/>
-										</td>
-										<td>
-											{{student.firstname}} {{student.lastname}}
-										</td>
-										<td>{{student.maxile_level}}</td>
-										<td>{{student.game_level}}</td>
-										<td>
-											<ul>
-												<li *ngFor="let level of student.field_maxile">{{level}}</li>
-											</ul>
-										</td>
-										<td>
-											<ul>
-												<li *ngFor="let track of student.tracks_passed">{{track.track}}</li>
-											</ul>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+					<div class="m-portlet__body">
+						<!--begin::Section-->
+						<div class="m-section">
+							<div class="m-section__content">
+								<table class="table m-table">
+									<thead>
+										<tr>
+											<td>Student</td>
+											<td>Name</td>
+											<td>Maxile Level</td>
+											<td>Game Level</td>
+											<td>Field Level</td>
+											<td>Tracks Passed</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="m-table__row--active" *ngFor="let student of selectedTeach.enrolled_students">
+											<td scope="row">
+												<img src="{{student.image}}"  width="75"/>
+											</td>
+											<td>
+												{{student.firstname}} {{student.lastname}}
+											</td>
+											<td>{{student.maxile_level}}</td>
+											<td>{{student.game_level}}</td>
+											<td>
+												<ul>
+													<li *ngFor="let level of student.field_maxile">{{level}}</li>
+												</ul>
+											</td>
+											<td>
+												<ul>
+													<li *ngFor="let track of student.tracks_passed">{{track.track}}</li>
+												</ul>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--end::Section-->
+					</div>
+					<!--end::Form-->
+				</div>			
+			</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="m-portlet">
+					<div class="m-portlet__head">
+						<div class="m-portlet__head-caption">
+							<div class="m-portlet__head-title">
+								<h3>
+									{{selectedTeach.house}} Syllabus
+								</h3>
+							</div>
 						</div>
 					</div>
-					<!--end::Section-->
-				</div>
-				<!--end::Form-->
-			</div>			
-		</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="m-portlet">
-				<div class="m-portlet__head">
-					<div class="m-portlet__head-caption">
-						<div class="m-portlet__head-title">
-							<h3>
-								{{selectedTeach.house}} Syllabus
-							</h3>
-						</div>
-					</div>
-				</div>
-				<div class="m-portlet__body">
-					<!--begin::Section-->
-					<div class="m-section">
-						<div class="m-section__content">
-							<table class="table m-table">
-								<thead>
-									<tr>
-										<td>
-											Track 
-											<button type="button" class="m-btn btn">
-												+
-											</button>
+					<div class="m-portlet__body">
+						<!--begin::Section-->
+						<div class="m-section">
+							<div class="m-section__content">
+								<table class="table m-table">
+									<thead>
+										<tr>
+											<td>
+												Track 
+												<button type="button" class="m-btn btn">
+													+
+												</button>
 
-										</td>
-										<td>
-											Description
-										</td>
-										<td>Status</td>
-										<td>Field</td>
-										<td>Level</td>
-										<td>
-											Skills
-										</td>
-										<td>
-											Action
-										</td>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="m-table__row--active" *ngFor="let track of selectedTeach.tracks">
-										<td scope="row">
-											{{track.track}}
-										</td>
-										<td>
-											{{track.description}}
-										</td>
-										<td>{{track.status.status}}</td>
-										<td>{{track.field.field}}</td>
-										<td>{{track.level.level}}</td>
-										<td>
-											<ul>
-												<li *ngFor="let skill of track.skills">{{skill.skill}}</li>
-											</ul>
-										</td>
-										<td>
-											<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-												<div class="btn-group" role="group" aria-label="First group">
-													<button type="button" class="m-btn btn btn-primary">
-														Edit
-													</button>
-													<button type="button" class="m-btn btn btn-warning">
-														Delete
-													</button>
+											</td>
+											<td>
+												Description
+											</td>
+											<td>Status</td>
+											<td>Field</td>
+											<td>Level</td>
+											<td>
+												Skills
+											</td>
+											<td>
+												Action
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="m-table__row--active" *ngFor="let track of selectedTeach.tracks">
+											<td scope="row">
+												{{track.track}}
+											</td>
+											<td>
+												{{track.description}}
+											</td>
+											<td>{{track.status.status}}</td>
+											<td>{{track.field.field}}</td>
+											<td>{{track.level.level}}</td>
+											<td>
+												<ul>
+													<li *ngFor="let skill of track.skills">{{skill.skill}}</li>
+												</ul>
+											</td>
+											<td>
+												<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+													<div class="btn-group" role="group" aria-label="First group">
+														<button type="button" class="m-btn btn btn-primary">
+															Edit
+														</button>
+														<button type="button" class="m-btn btn btn-warning">
+															Delete
+														</button>
 
+													</div>
 												</div>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
+						<!--end::Section-->
 					</div>
-					<!--end::Section-->
-				</div>
-				<!--end::Form-->
-			</div>			
+					<!--end::Form-->
+				</div>			
+			</div>
 		</div>
-	</div>
   </div>
 </div>

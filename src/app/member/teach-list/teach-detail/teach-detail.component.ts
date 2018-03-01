@@ -9,10 +9,9 @@ import { Chart } from 'chart.js';
 })
 export class TeachDetailComponent implements OnInit {
   @Input() selectedTeach: any;
-
+  chartdata: any;
   constructor() { }
 
   ngOnInit() {
   }
 }
-

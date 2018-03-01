@@ -38,6 +38,8 @@ import { TeachComponent } from './member/teach-list/teach.component';
 import { TeachDetailComponent } from './member/teach-list/teach-detail/teach-detail.component';
 import { ChartsModule } from 'ng2-charts';
 import { ChartComponent } from './member/teach-list/teach-detail/chart/chart.component';
+import { BarchartComponent } from './member/teach-list/teach-detail/barchart/barchart.component';
+import { StudentradarComponent } from './member/house-detail/studentradar/studentradar.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { ChartComponent } from './member/teach-list/teach-detail/chart/chart.com
     TeachListComponent,
     TeachComponent,
     TeachDetailComponent,
-    ChartComponent
+    ChartComponent,
+    BarchartComponent,
+    StudentradarComponent
   ],
   imports: [
     routes,
