@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { House } from '../../models/house';
 
 @Component({
@@ -9,9 +9,14 @@ import { House } from '../../models/house';
 export class HouseDetailComponent implements OnInit {
 @Input() selectedHouse: House;
 
+  @Output() selectedEvent: EventEmitter<House> = new EventEmitter<House>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  unSelect(house: House) {
+  	this.selectedEvent.emit(null);
   }
 
 }

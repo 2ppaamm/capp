@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { House } from '../../models/house';
 import { DashboardService } from '../../services/dashboard.service';
-import {Observable} from 'rxjs/Observable';
+import { Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'ag-house-list',

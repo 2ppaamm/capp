@@ -3,7 +3,7 @@
      Enrolled Classes
 ============================== -->
 <section class="enrolled" id="enrolled">
-   	<ag-house-detail [selectedHouse] = "selectedHouse"></ag-house-detail>
+   	<ag-house-detail [selectedHouse] = "selectedHouse" (selectedEvent)="selectHouse($event)"></ag-house-detail>
 	<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
 </section>
 <!-- /END ENROLLED SECTION -->
@@ -11,7 +11,7 @@
      Teaching Classes
 ============================== -->
 <section class="enrolled" id="teaching">
-    <ag-teach-detail [selectedTeach] = "selectedTeach"></ag-teach-detail>
+    <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)"></ag-teach-detail>
 	<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
 </section>
 <!-- /END TEACHING SECION -->

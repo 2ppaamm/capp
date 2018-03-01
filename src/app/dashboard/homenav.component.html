@@ -15,12 +15,14 @@
     <!-- Navbar Right -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-right">
-		<li routerLinkActive="active"><a [routerLink]="['/member']">Dashboard</a></li>
-		<li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
-		<li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
-		<li class="dropdown" ngDropdown>
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Member
+    		<li routerLinkActive="active"><a [routerLink]="['/member']">Dashboard</a></li>
+    		<li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
+    		<li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
+    		<li class="dropdown" ngDropdown>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{user.name}}
             <span class="caret"></span></a>
+          }
+          }
           <ul class="dropdown-menu" role="menu">
             <li *ngIf="isAuthenticated()"><a (click)="logout()">Logout</a></li>
             <li *ngIf="!isAuthenticated()"><a (click) = "login()">Login</a></li>

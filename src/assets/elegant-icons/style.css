@@ -77,16 +77,28 @@ DEEP COLOR CODE: #520000
 	color: #960000;
 }
 
-#house-detail .panel-heading h3 a{
+#teach-detail .panel-heading a, #house-detail .panel-heading a{
 	color: #520000;
+    text-align: left;
 }
 
-#house-detail .btn-video {
+#teach-detail .btn-video, #house-detail .btn-video {
+	background:#520000;
+	color:#bdbdbd;
+}
+
+#teach-detail .btn-edit, #house-detail .btn-edit {
 	background:#bdbdbd;
 }
 
-#house-detail .btn-quiz {
-	background: #ffffff
+#teach-detail .btn-delete, #house-detail .btn-delete {
+	background:#960000;
+	color: #bdbdbd;
+}
+
+
+#teach-detail .btn-question, #house-detail .btn-quiz {
+	background: #ffffff;
 }
 
 #house-detail .progress-bar{
@@ -94,8 +106,12 @@ DEEP COLOR CODE: #520000
 	height: 1 em;
 }
 
-#house-detail th, #house-detail td {
-	    text-align: left;
+#house-detail th, #house-detail td, #teach-detail th, #house-detail tr, #teach-detail tr, #teach-detail td {
+	text-align: left;
+}
+
+#house-detail th, #teach-detail th {
+	font-weight: bold;
 }
 
 footer .contact-button {

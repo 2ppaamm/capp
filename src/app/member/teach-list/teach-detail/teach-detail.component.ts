@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { House } from '../../../models/house';
 import { Chart } from 'chart.js';
 
@@ -9,9 +9,14 @@ import { Chart } from 'chart.js';
 })
 export class TeachDetailComponent implements OnInit {
   @Input() selectedTeach: any;
+  @Output() selectedEvent: EventEmitter<House> = new EventEmitter<House>();
   chartdata: any;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  unSelect(house: House) {
+  	this.selectedEvent.emit(null);
   }
 }

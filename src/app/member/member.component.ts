@@ -10,7 +10,7 @@ import { House } from '../models/house';
 })
 export class MemberComponent implements OnInit {
   selectedHouse: House;
-
+  user: any;
   dashboard: any;
 
   houses: any;
@@ -22,6 +22,7 @@ export class MemberComponent implements OnInit {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+      this.user = this.dashboardService.getUser();
   }
 
   selectCourse(course: Course) {

@@ -1,238 +1,192 @@
-<div *ngIf="selectedTeach">
-  <div class="container house-detail">
-    	<h1>{{selectedTeach.house}} <span>Instructor's Page</span></h1>
-		<p>{{selectedTeach.description}}</p>				
-		<div class="colored-line">
-		</div>
-		<!--End::Section-->  <!--Begin::Section-->
-		<div class="m-portlet">
-			<div class="m-portlet__body  m-portlet__body--no-padding">
-				<div class="row results m-row--no-padding m-row--col-separator-xl">
-					<div class="col-xl-3">
-						<!--begin:: Widgets/Stats2-1 -->
-						<div class="m-widget1">
-							<div class="m-widget1__item">
-								<div class="row m-row--no-padding align-items-center">
-									<div class="col">
-										<h3 class="m-widget1__title">
-											Average Maxile Score
-										</h3>
-									</div>
-									<div class="col m--align-right">
-										<span class="m-widget1__number m--font-brand">
-											{{selectedTeach.average_progress}}
-										</span>
-									</div>
-								</div>
+<!--Begin::Section-->
+<section  *ngIf="selectedTeach" id="teach-detail">
+	<div class="alert alert-default alert-dismissible">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="unSelect(selectedTeach)">&times;</a>
+	  <div class="container house-detail">
+		<div class="container">
+			
+			<!-- SECTION HEADER -->
+			<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+				
+				<!-- SECTION TITLE -->
+				<h1 class="dark-text">{{selectedTeach.house}} <span>Instructor's Page</span></h1>
+				<div class="colored-line">
+				</div>
+				
+				<div class="section-description">
+					<p>{{selectedTeach.description}}</p>
+				</div>
+				
+				<div class="colored-line">
+				</div>
+			</div>
+			<!-- /END SECTION HEADER -->
+	    	<h2 class="main-color">
+				{{selectedTeach.house}} Class Management
+			</h2>
+		    <div class="row" *ngIf="selectedTeach.enrolled_students?.length>0; else nostudent">
+
+				<div class="col-md-3 col-sm-12 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+					
+					<div class="single-package">
+						<h3 class="package-heading main-color">Class Maxile Score</h3>
+
+						<div class="price">
+							<div class="color-bg">
+								<h3>{{selectedTeach.average_progress}}<span class="month"><br />Average Maxile Score</span></h3>
 							</div>
-							<div class="m-widget1__item">
-								<div class="row m-row--no-padding align-items-center">
-									<div class="col">
-										<h3 class="m-widget1__title">
-											Lowest Score
-										</h3>
-									</div>
-									<div class="col m--align-right">
-										<span class="m-widget1__number m--font-danger">
-											{{selectedTeach.lowest_progress}}
-										</span>
-									</div>
-								</div>
+							<div>
+								<h3>{{selectedTeach.lowest_progress}}<span class="month"><br />Lowest Maxile Score</span></h3>
 							</div>
-							<div class="m-widget1__item">
-								<div class="row m-row--no-padding align-items-center">
-									<div class="col">
-										<h3 class="m-widget1__title">
-											Highest Score
-										</h3>
-									</div>
-									<div class="col m--align-right">
-										<span class="m-widget1__number m--font-success">
-											{{selectedTeach.highest_progress}}
-										</span>
-									</div>
-								</div>
+							<div class="color-bg">
+								<h3>{{selectedTeach.highest_progress}}<span class="month"><br />Highest Maxile Score</span></h3>
 							</div>
 						</div>
-						<!--end:: Widgets/Stats2-1 -->
 					</div>
-					<div class="col-xl-6">
-						<!--begin:: Widgets/Daily Sales-->
-						<div class="m-widget14">
-							<div class="m-widget14__header m--margin-bottom-30">
-								<h3 class="m-widget14__title">
-									Track Maxile
-								</h3>
-								<span class="m-widget14__desc">
-									Track vs Class Average Maxile
-								</span>
-							</div>
-							<div class="m-widget14__chart" style="height:120px;">
-								<ag-barchart [tracksdata] = "selectedTeach.tracksdata" [barChartData]="selectedTeach.barchartdata"></ag-barchart>
-							</div>
-						</div>
-						<!--end:: Widgets/Daily Sales-->
+				</div>
+				<!-- /END SINGLE PACKACGE -->
+				
+				<!-- SINGLE PACKACGE -->
+				<div class="col-md-6 col-sm-12 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+					
+					<div class="single-package">
+						
+						<h3 class="package-heading main-color">
+						Track Maxile</h3>
+						<ag-barchart [tracksdata] = "selectedTeach.tracksdata" [barChartData]="selectedTeach.barchartdata"></ag-barchart>				
 					</div>
-					<div class="col-xl-3">
-						<!--begin:: Widgets/Profit Share-->
-						<div class="m-widget14">
-							<div class="m-widget14__header">
-								<h3 class="m-widget14__title">
-									Student Performance
-								</h3>
-								<span class="m-widget14__desc">
-									Class Performance
-								</span>
-							</div>
-							<div class="row  align-items-center">
-								<div class="col">
-									<ag-chart [chartdata] = "selectedTeach.chartdata"></ag-chart>
-								</div>
-							</div>
-						</div>
-						<!--end:: Widgets/Profit Share-->
+				</div>
+				<!-- /END SINGLE PACKACGE -->
+				
+				<!-- SINGLE PACKACGE -->
+				<div class="col-md-3 col-sm-12 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+					
+					<div class="single-package">				
+						<h3 class="package-heading main-color">
+						Student Performance </h3>
+						<ag-chart [chartdata] = "selectedTeach.chartdata"></ag-chart>
 					</div>
 				</div>
 			</div>
+			<ng-template #nostudent>
+				<div class="colored-line"></div>
+				<p>There is no student enrolled in this course.</p>
+				<div class="colored-line">
+				</div>
+			</ng-template>
 		</div>
-	<!--End::Section-->  <!--Begin::Section-->
+	<!-- /END CONTAINER -->
 
+		<div class="row" *ngIf="selectedTeach.enrolled_students?.length>0">
+			<div class="col-xs-12">
+				<table class="table table-striped table-condensed">
+					<thead>
+						<tr>
+							<th>Student</th>
+							<th>Name</th>
+							<th>Maxile Level</th>
+							<th>Game Level</th>
+							<th>Field Level</th>
+							<th>Tracks Passed</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="m-table__row--active" *ngFor="let student of selectedTeach.enrolled_students">
+							<td scope="row">
+								<img src="{{student.image}}"  width="75"/>
+							</td>
+							<td>
+								{{student.firstname}} {{student.lastname}}
+							</td>
+							<td>{{student.maxile_level}}</td>
+							<td>{{student.game_level}}</td>
+							<td>
+								<ul>
+									<li *ngFor="let level of student.field_maxile">{{level}}</li>
+								</ul>
+							</td>
+							<td>
+								<ul>
+									<li *ngFor="let track of student.tracks_passed">{{track.track}}</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>			
+		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="m-portlet">
-					<div class="m-portlet__head">
-						<div class="m-portlet__head-caption">
-							<div class="m-portlet__head-title">
-								<h3>
-									{{selectedTeach.house}} Class List
-								</h3>
-							</div>
-						</div>
-					</div>
-					<div class="m-portlet__body">
-						<!--begin::Section-->
-						<div class="m-section">
-							<div class="m-section__content">
-								<table class="table m-table">
-									<thead>
-										<tr>
-											<td>Student</td>
-											<td>Name</td>
-											<td>Maxile Level</td>
-											<td>Game Level</td>
-											<td>Field Level</td>
-											<td>Tracks Passed</td>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="m-table__row--active" *ngFor="let student of selectedTeach.enrolled_students">
-											<td scope="row">
-												<img src="{{student.image}}"  width="75"/>
-											</td>
-											<td>
-												{{student.firstname}} {{student.lastname}}
-											</td>
-											<td>{{student.maxile_level}}</td>
-											<td>{{student.game_level}}</td>
-											<td>
-												<ul>
-													<li *ngFor="let level of student.field_maxile">{{level}}</li>
-												</ul>
-											</td>
-											<td>
-												<ul>
-													<li *ngFor="let track of student.tracks_passed">{{track.track}}</li>
-												</ul>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<!--end::Section-->
-					</div>
-					<!--end::Form-->
-				</div>			
-			</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="m-portlet">
-					<div class="m-portlet__head">
-						<div class="m-portlet__head-caption">
-							<div class="m-portlet__head-title">
-								<h3>
-									{{selectedTeach.house}} Syllabus
-								</h3>
-							</div>
-						</div>
-					</div>
-					<div class="m-portlet__body">
-						<!--begin::Section-->
-						<div class="m-section">
-							<div class="m-section__content">
-								<table class="table m-table">
-									<thead>
-										<tr>
-											<td>
-												Track 
-												<button type="button" class="m-btn btn">
-													+
-												</button>
-
-											</td>
-											<td>
-												Description
-											</td>
-											<td>Status</td>
-											<td>Field</td>
-											<td>Level</td>
-											<td>
-												Skills
-											</td>
-											<td>
-												Action
-											</td>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="m-table__row--active" *ngFor="let track of selectedTeach.tracks">
-											<td scope="row">
-												{{track.track}}
-											</td>
-											<td>
-												{{track.description}}
-											</td>
-											<td>{{track.status.status}}</td>
-											<td>{{track.field.field}}</td>
-											<td>{{track.level.level}}</td>
-											<td>
-												<ul>
-													<li *ngFor="let skill of track.skills">{{skill.skill}}</li>
-												</ul>
-											</td>
-											<td>
-												<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-													<div class="btn-group" role="group" aria-label="First group">
-														<button type="button" class="m-btn btn btn-primary">
-															Edit
-														</button>
-														<button type="button" class="m-btn btn btn-warning">
-															Delete
-														</button>
-
-													</div>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<!--end::Section-->
-					</div>
-					<!--end::Form-->
-				</div>			
-			</div>
-		</div>
+				<div class="container">
+				  <div class="colored-line">
+				  </div>
+				  <br />
+				  <h2 class="main-color">{{selectedTeach.house}} Curriculum Management</h2>
+				  <p>Click on the collapsible panel to open and close tracks / manage skills.</p>
+				  <div class="panel-group">
+				    <div class="panel panel-default">
+				    	<table class="table table-striped table-condensed">
+							<thead>
+								<tr>
+									<th>Track <button type="button" class="m-btn btn">+</button></th>
+									<th>Status</th>
+									<th>Field</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody *ngFor="let track of selectedTeach.tracks">
+								<tr>
+									<td class="panel-heading">
+	   							        <a data-toggle="collapse" href="#collapse{{track.id}}" align="left">{{track.track}}</a>								
+									</td>
+									<td>{{track.status.status}}</td>
+									<td>{{track.field.field}}</td>
+									<td>
+										<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+											<div class="btn-group" role="group" aria-label="First group">
+												<button type="button" class="m-btn btn btn-edit">Edit</button>
+												<button type="button" class="m-btn btn btn-delete">Delete</button>
+											</div>
+										</div>
+										
+									</td>
+								</tr>
+								  <div *ngFor="let skill of track.skills">
+								      <div id="collapse{{track.id}}" class="panel-collapse collapse">
+								        <div class="panel-body">
+											<table class="table table-striped table-condensed">
+												<thead>
+													<tr>
+														<th>Skill <button type="button" class="m-btn btn">+</button></th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr *ngFor="let skill of track.skills">
+														<td>{{skill.skill}}</td>
+														<td>
+															<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+																<div class="btn-group" role="group" aria-label="First group">
+																	<button type="button" class="m-btn btn btn-edit">Edit</button>
+																	<button type="button" class="m-btn btn btn-delete">Delete</button>
+																	<button type="button" class="m-btn btn btn-question">Add Questions</button>
+																	<button type="button" class="m-btn btn btn-video">Video</button>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+								        </div>
+								      </div>
+							      </div>
+							</tbody>		
+				    	</table>
+				    </div>
+				  </div>
+		        </div>
+	    	</div>
+	  	</div>
+	  </div>
   </div>
-</div>
+</section>
