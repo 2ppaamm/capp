@@ -273,7 +273,7 @@ h5 {
    SECTION:  HOME                 
 -----------------------------------------*/
 header {
-        background: url('../images/bg-1.jpg') no-repeat center;
+        background: url('../images/bg-1.png') no-repeat center;
     -webkit-background-size: cover;
             background-size: cover;
 }
@@ -679,7 +679,7 @@ background: url('../images/bg-2.jpg') no-repeat center;
    SECTION:  DOWNLOAD                 
 -----------------------------------------*/
 .download {
-background: url('../images/bg-3.jpg') no-repeat center;
+background: url('../images/bg-3.png') no-repeat center;
 -webkit-background-size: cover;
         background-size: cover;
 

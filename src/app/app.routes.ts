@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo:'/', pathMatch: 'full'},
   { path: '', component: LandingComponent},
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'member', component: MemberComponent},
+  { path: 'home', component: MemberComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},

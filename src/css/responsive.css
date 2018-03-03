@@ -9,7 +9,7 @@ RESPONSIVE FIXES
 @media (max-width: 640px) {
     
     header {
-    background: url('../images/bg-1.jpg') no-repeat center;
+    background: url('../images/bg-1.png') no-repeat center;
     -webkit-background-size: cover;
             background-size: cover;
     }
@@ -21,7 +21,7 @@ RESPONSIVE FIXES
     }
     
     .download {
-    background: url('../images/bg-3.jpg') no-repeat center;
+    background: url('../images/bg-3.png') no-repeat center;
     -webkit-background-size: cover;
             background-size: cover;
     
