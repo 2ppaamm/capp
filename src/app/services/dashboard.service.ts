@@ -28,10 +28,9 @@ export class DashboardService {
   }
 
   getUser(): Observable<any> {
-    return this.user;
-//    return this.http.get('http://localhost/api/protected')
-//    .map((response) => response)
-//    .catch((error:any) => Observable.throw(error.json().error || {message: 'Server Error'}));;
+//    return this.user;
+    return this.http.get('http://localhost/api/protected')
+    .map((response) => response);
   }
 
   getDashboard(): Observable<any> {

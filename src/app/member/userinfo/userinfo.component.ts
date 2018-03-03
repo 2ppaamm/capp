@@ -8,11 +8,14 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./userinfo.component.css']
 })
 export class UserinfoComponent implements OnInit {
-  user: Observable<any>;
+  user: any;
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-  	this.user = this.dashboardService.getUser();
-  }
-
+	this.dashboardService.getUser().subscribe(
+	  data => {
+	  	this.user = data;
+	  },
+	  error =>  console.log(<any>error));
+	}
 }
