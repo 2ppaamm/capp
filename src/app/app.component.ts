@@ -10,7 +10,9 @@ export class AppComponent {
   title = 'ag';
   constructor(public authService:AuthService){
       authService.handleAuthentication();
+      authService.scheduleRenewal();
   }
+
   public isAuthenticated(): boolean {
     // Check whether the current time is past the
     // access token's expiry time

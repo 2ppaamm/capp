@@ -326,6 +326,22 @@ border-color: #313131;
 background: #313131;
 }
 
+.nav-pills a {
+    background-color: grey;
+    color:white;
+}
+
+.nav-pills a:hover {
+    background-color:#bdbdbd;
+    color:black;
+}
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+ .nav-pills>li.active>a:focus{
+    background-color:#960000;
+    color:white;
+}
+
 header .only-logo .navbar {
     background: none;
     padding: 60px;
@@ -572,7 +588,7 @@ background: url('../images/bg-2.jpg') no-repeat center;
    SECTION:  SERVICES           
 -----------------------------------------*/
 
-.services {
+.services, .membercontent {
     padding-top: 80px;
     padding-bottom: 60px;
     background: #ffffff;

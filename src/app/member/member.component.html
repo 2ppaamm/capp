@@ -2,35 +2,36 @@
 <section class="enrolled" id="userinfo">
 	<ag-userinfo *ngIf="isAuthenticated()"></ag-userinfo>
 </section>	
-<!-- =========================
-     Enrolled Classes
-============================== -->
-<div class="btn-group">
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#enrolled">Enrolled Classes</button>
-  <section class="enrolled" id="enrolled" class="collapse">
-  	<br />
-	   	<ag-house-detail [selectedHouse] = "selectedHouse" (selectedEvent)="selectHouse($event)"></ag-house-detail>
-		<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
+
+<div class="container">
+	<ul class="nav nav-pills">
+		<li class="active"><a data-toggle="tab" href="#enrolled">Enrolled Classes</a></li>
+		<li><a data-toggle="tab" href="#teaching">Class Management</a></li>
+		<li><a data-toggle="tab" href="#recommendedcourses"> Recommended Courses</a></li>
+	</ul>
+</div>
+<div class="tab-content membercontent">
+  <section class="enrolled" id="enrolled" class="tab-pane fade in active">
+   	<ag-house-detail [selectedHouse] = "selectedHouse" (selectedEvent)="selectHouse($event)"></ag-house-detail>
+	<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
   </section>
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#teaching">Class Management</button>
-  <section class="enrolled" id="teaching" class="collapse">
-	    <br />
-	    <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)"></ag-teach-detail>
-		<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
+  <section class="enrolled" id="teaching" class="tab-pane fade in">
+    <br />
+    <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)"></ag-teach-detail>
+	<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
   </section>
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#recommendedcourses"> Recommended Courses</button>
-   <section class="enrolled" id="recommendedcourses" class="collapse">
-		<br />
-		<div class="container">
-			<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-				<h2 class="dark-text">Recommended Courses</h2>
-				<div class="colored-line">
-				</div>
-				<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-					<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
-					<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>					
-				</div>		
+   <section class="enrolled" id="recommendedcourses" class="tab-pane fade in active">
+	<br />
+	<div class="container">
+		<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+			<h2 class="dark-text">Recommended Courses</h2>
+			<div class="colored-line">
 			</div>
+			<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+				<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>				
+				<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
+			</div>		
 		</div>
+	</div>
    </section>
 </div>

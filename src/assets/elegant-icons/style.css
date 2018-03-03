@@ -84,7 +84,7 @@ DEEP COLOR CODE: #520000
 
 #teach-detail .btn-video, #house-detail .btn-video {
 	background:#520000;
-	color:#bdbdbd;
+	color:white;
 }
 
 #teach-detail .btn-edit, #house-detail .btn-edit {
@@ -93,7 +93,7 @@ DEEP COLOR CODE: #520000
 
 #teach-detail .btn-delete, #house-detail .btn-delete {
 	background:#960000;
-	color: #bdbdbd;
+	color: white;
 }
 
 
@@ -149,7 +149,7 @@ footer .social-icons li a:hover {
 font-family: 'ElegantIcons';
 src: url('fonts/ElegantIcons.svg#ElegantIcons') format('svg');
 
-}
+		}
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
