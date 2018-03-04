@@ -106,7 +106,7 @@
 														<button type="button" class="m-btn btn btn-quiz">
 															Quiz
 														</button>
-						<button (click)="onVideo(skill)" type="button" class="m-btn btn btn-video" data-toggle="modal" data-target="#myModal">Video</button>
+														<button (click)="onVideo(skill)" type="button" class="m-btn btn btn-video" data-toggle="modal" data-target="#myModal">Video</button>
 													</div>
 												</div>
 											</td>
@@ -125,4 +125,7 @@
 
 	</div>
 </div>
+</section>
+<section class="" id="videoplayer">
+	 <ag-video [selectedVideo]= "selectedVideo" (selectedVideo)="outVideo($event)"></ag-video>	
 </section>
