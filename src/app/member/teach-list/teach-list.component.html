@@ -6,7 +6,7 @@
 		<h2 class="dark-text">Class Management</h2>
 		
 		<div class="colored-line">
-		</div>
+		</div><br />
 		<div class="row">
 			<div class="container">
 			      <div class="row">
@@ -19,3 +19,6 @@
 	<!-- /END SECTION HEADER -->	
 </div>
 <!-- /END CONTAINER -->
+<div class="container" *ngIf ="! (houses | async)?.length>0">
+	<p>You are teaching any class.</p>
+</div>

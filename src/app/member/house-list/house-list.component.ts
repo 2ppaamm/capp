@@ -11,8 +11,8 @@ import { Observable} from 'rxjs/Observable';
 export class HouseListComponent implements OnInit {
   houses: any;
   selectedHouse: House;
-
   @Output() selectedEvent: EventEmitter<House> = new EventEmitter<House>();
+
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {

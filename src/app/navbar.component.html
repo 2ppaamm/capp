@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation navbar-default">
+<nav class="navbar bs-docs-nav navbar-fixed-top sticky-navigation navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -13,7 +13,7 @@
     </div>
 
     <!-- Navbar Right -->
-    <div class="collapse navbar-collapse" id="kane-navigation">
+    <div class="collapse navbar-collapse" id="kane-navigation" *ngIf="!isAuthenticated()">
         <ul class="nav navbar-nav navbar-right main-navigation">
           <li><a href="#home">Home</a></li>
           <li><a href="#howitworks">How it Works</a></li>
@@ -25,5 +25,22 @@
           <li><a href="#aboutus">About Us</a></li>
       </ul>
     </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" *ngIf="isAuthenticated()">
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLinkActive="active"><a [routerLink]="['/home']"><i class="icon_house"></i></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/leader']"><i class="icon_ribbon"></i></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/admin']"><i class="icon_pencil"></i></a></li>
+        <li class="dropdown" ngDropdown>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon_profile"></i>
+            <span class="caret"></span></a>
+
+          <ul class="dropdown-menu" role="menu">
+            <li *ngIf="isAuthenticated()"><a (click)="logout()">Logout</a></li>
+            <li *ngIf="!isAuthenticated()"><a (click) = "login()">Login</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </nav>

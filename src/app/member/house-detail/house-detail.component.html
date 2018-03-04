@@ -2,7 +2,6 @@
   <div *ngIf="selectedHouse">
 	<div class="alert alert-default alert-dismissible">
 	  	<h1>
-	  		<img [src]="selectedHouse.image" width="75" class="img-responsive" />{{selectedHouse.house}} 
 	  		<span>Student Page</span>
 	  		<a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="unSelect(selectedHouse)"><button>Close Class</button></a>
 		</h1>
@@ -107,7 +106,7 @@
 														<button type="button" class="m-btn btn btn-quiz">
 															Quiz
 														</button>
-														<button type="button" class="m-btn btn btn-video">Video</button>
+						<button (click)="onVideo(skill)" type="button" class="m-btn btn btn-video" data-toggle="modal" data-target="#myModal">Video</button>
 													</div>
 												</div>
 											</td>
@@ -115,8 +114,6 @@
 									</tbody>
 								</table>
 					        </div>
-					        <!--div class="panel-footer">Panel Footer</div>
-					        </div-->
 					    </div>
 				    </div>
 				  </div>

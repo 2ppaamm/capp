@@ -1,3 +1,6 @@
+<section class="" id="videoplayer">
+	 <ag-video [selectedVideo]= "selectedVideo" (selectedVideo)="outVideo($event)"></ag-video>	
+</section>
 <section class="enrolled" id="userinfo" *ngIf="isAuthenticated()">
 	<ag-userinfo></ag-userinfo>
 </section>	
@@ -11,21 +14,19 @@
 </div>
 <div class="tab-content membercontent">
   <section class="enrolled" id="enrolled" class="tab-pane fade in active">
-   	<ag-house-detail [selectedHouse] = "selectedHouse" (selectedEvent)="selectHouse($event)"></ag-house-detail>
+   	<ag-house-detail [selectedHouse] = "selectedHouse" (selectedEvent)="selectHouse($event)" (selectedVideo)= "selectSkill($event)"></ag-house-detail>
 	<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
   </section>
   <section class="enrolled" id="teaching" class="tab-pane fade in">
-    <br />
     <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)"></ag-teach-detail>
 	<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
   </section>
    <section class="enrolled" id="recommendedcourses" class="tab-pane fade in">
-	<br />
 	<div class="container">
 		<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
 			<h2 class="dark-text">Recommended Courses</h2>
 			<div class="colored-line">
-			</div>
+			</div><br />
 			<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
 				<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>				
 				<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>

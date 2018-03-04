@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../services/dashboard.service';
 import { Course } from '../models/course';
 import { House } from '../models/house';
+import { Skill } from '../models/skill';
 
 @Component({
   selector: 'ag-member',
@@ -18,6 +19,7 @@ export class MemberComponent implements OnInit {
   courses: any;
   selectedCourse: Course;
   selectedTeach: House;
+  selectedVideo: Skill;
   
   constructor() { }
 
@@ -34,6 +36,10 @@ export class MemberComponent implements OnInit {
 
   selectTeach(house: House) {
     this.selectedTeach = house;
+  }
+
+  selectSkill(skill: Skill) {
+    this.selectedVideo = skill;
   }
 
   onSelect(house: House) {

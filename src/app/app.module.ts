@@ -26,7 +26,6 @@ import { AuthService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './services/auth-guard.service';
 import { LandingComponent } from './landing/landing.component';
-import { HomenavComponent } from './dashboard/homenav.component';
 import { MemberComponent } from './member/member.component';
 import { HouseComponent } from './member/house/house.component';
 import { FooterComponent } from './footer.component';
@@ -42,6 +41,7 @@ import { BarchartComponent } from './member/teach-list/teach-detail/barchart/bar
 import { StudentradarComponent } from './member/house-detail/studentradar/studentradar.component';
 import { UserinfoComponent } from './member/userinfo/userinfo.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { VideoComponent } from './member/video/video.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,6 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     AdminUserCreateComponent,
     AdminUserListComponent,
     LandingComponent,
-    HomenavComponent,
     MemberComponent,
     HouseComponent,
     FooterComponent,
@@ -76,7 +75,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     BarchartComponent,
     StudentradarComponent,
     UserinfoComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    VideoComponent
   ],
   imports: [
     routes,

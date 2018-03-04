@@ -30,7 +30,7 @@ export class DashboardService {
   getUser(): Observable<any> {
 //    return this.user;
     return this.http.get('http://localhost/api/protected')
-    .map((response) => response);
+    .map((response) => response['user']);
   }
 
   getDashboard(): Observable<any> {
