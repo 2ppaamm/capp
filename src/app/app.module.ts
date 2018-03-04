@@ -43,6 +43,8 @@ import { UserinfoComponent } from './member/userinfo/userinfo.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { VideoComponent } from './member/video/video.component';
 
+export function tokenGetter(): string { return localStorage.getItem('token'); }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,12 +87,9 @@ import { VideoComponent } from './member/video/video.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: () => {
-          return localStorage.getItem('token');
-        },
-        whitelistedDomains: ['localhost:4200', 'localhost']
+    JwtModule.forRoot({ 
+      config: { tokenGetter,
+      whitelistedDomains: ['math.pamelalim.me', 'math.all-gifted.com','localhost']
       }
     }),
     ChartsModule    
@@ -98,4 +97,5 @@ import { VideoComponent } from './member/video/video.component';
   providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
