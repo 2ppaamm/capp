@@ -41,6 +41,7 @@ import { ChartComponent } from './member/teach-list/teach-detail/chart/chart.com
 import { BarchartComponent } from './member/teach-list/teach-detail/barchart/barchart.component';
 import { StudentradarComponent } from './member/house-detail/studentradar/studentradar.component';
 import { UserinfoComponent } from './member/userinfo/userinfo.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { UserinfoComponent } from './member/userinfo/userinfo.component';
     ChartComponent,
     BarchartComponent,
     StudentradarComponent,
-    UserinfoComponent
+    UserinfoComponent,
+    LeaderboardComponent
   ],
   imports: [
     routes,

@@ -69,4 +69,11 @@ export class LandingComponent implements OnInit {
   public login(){
   	this.authService.login();
   }
+
+   public isAuthenticated(): boolean {
+    // Check whether the current time is past the
+    // access token's expiry time
+    const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+    return new Date().getTime() < expiresAt;
+  }
 }

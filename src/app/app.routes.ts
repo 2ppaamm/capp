@@ -8,6 +8,7 @@ import {AdminComponent} from './admin/admin.component';
 import {adminRoutes} from './admin/admin.routes';
 import {AuthGuardService} from './services/auth-guard.service';
 import {MemberComponent} from './member/member.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 const appRoutes: Routes = [
@@ -15,7 +16,7 @@ const appRoutes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'home', component: MemberComponent},
-  { path: 'contact', component: ContactComponent},
+  { path: 'leader', component: LeaderboardComponent},
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},
 

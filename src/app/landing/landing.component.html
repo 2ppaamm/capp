@@ -1,4 +1,3 @@
-<ag-navbar></ag-navbar>
 <!-- =========================
      HEADER   
 ============================== -->
@@ -6,7 +5,6 @@
 
 <!-- COLOR OVER IMAGE -->
 <div class="color-overlay"> <!-- To make header full screen. Use .full-screen class with color overlay. Example: <div class="color-overlay full-screen">  -->
-<ag-navbar></ag-navbar>	
 	<!-- CONTAINER -->
 	<div class="container">
 		
@@ -33,7 +31,7 @@
 					<!-- BUTTON -->
 					<div class="buttons" id="download-button">
 						
-						<a (click) = "login()" class="btn btn-default btn-lg standard-button"><i class="icon-app-download"></i>Sign Up or Login</a>
+						<a (click) = "login()" class="btn btn-default btn-lg standard-button"  *ngIf="!isAuthenticated()">Sign Up or Login</a>
 						
 					</div>
 					<!-- /END BUTTONS -->

@@ -15,24 +15,26 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://pamelalim.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200',
-    scope: 'openid email firstname picture'
+    params: {
+        scope: 'openid profile email name picture'
+      }    
   });
 
-   public scheduleRenewal() {
-     if(!this.isAuthenticated()) return;
-     this.unscheduleRenewal();
+  public scheduleRenewal() {
+    if(!this.isAuthenticated()) return;
+    this.unscheduleRenewal();
 
-     const expiresAt = JSON.parse(window.localStorage.getItem('expires_at'));
+    const expiresAt = JSON.parse(window.localStorage.getItem('expires_at'));
 
-     const source = Observable.of(expiresAt).flatMap(
-        expiresAt => {
+    const source = Observable.of(expiresAt).flatMap(
+      expiresAt => {
 
-        const now = Date.now();
+       const now = Date.now();
 
-        // Use the delay in a timer to
-        // run the refresh at the proper time
-        return Observable.timer(Math.max(1, expiresAt - now));
-    });
+       // Use the delay in a timer to
+       // run the refresh at the proper time
+       return Observable.timer(Math.max(1, expiresAt - now));
+   });
 
     // Once the delay time from above is
     // reached, get a new JWT and schedule
@@ -86,7 +88,7 @@ export class AuthService {
     // Go back to the home route
     this.router.navigate(['/']);
   }
-  
+
   public isAuthenticated(): boolean {
     // Check whether the current time is past the
     // access token's expiry time
@@ -99,12 +101,12 @@ export class AuthService {
   }
 
   public renewToken() {
-  this.auth0.checkSession({}, (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      this.setSession(result);
-    }
-  });
-}
+    this.auth0.checkSession({}, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        this.setSession(result);
+      }
+    });
+  }
 }

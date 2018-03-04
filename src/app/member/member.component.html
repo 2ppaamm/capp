@@ -1,6 +1,5 @@
-<ag-homenav  *ngIf="isAuthenticated()"></ag-homenav>
-<section class="enrolled" id="userinfo">
-	<ag-userinfo *ngIf="isAuthenticated()"></ag-userinfo>
+<section class="enrolled" id="userinfo" *ngIf="isAuthenticated()">
+	<ag-userinfo></ag-userinfo>
 </section>	
 
 <div class="container">
@@ -20,7 +19,7 @@
     <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)"></ag-teach-detail>
 	<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
   </section>
-   <section class="enrolled" id="recommendedcourses" class="tab-pane fade in active">
+   <section class="enrolled" id="recommendedcourses" class="tab-pane fade in">
 	<br />
 	<div class="container">
 		<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">

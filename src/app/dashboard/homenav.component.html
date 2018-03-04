@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation navbar-default">
+<nav class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation navbar-default" id="membernav">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -9,17 +9,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">All Gifted Dashboard</a>
+      <a class="navbar-brand" href="">All Gifted</a>
     </div>
 
     <!-- Navbar Right -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-right">
-    		<li routerLinkActive="active"><a [routerLink]="['/member']">Dashboard</a></li>
-    		<li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
-    		<li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
+    		<li routerLinkActive="active"><a [routerLink]="['/home']"><i class="icon_house"></i></a></li>
+    		<li routerLinkActive="active"><a [routerLink]="['/leader']"><i class="icon_ribbon"></i></a></li>
+    		<li routerLinkActive="active"><a [routerLink]="['/admin']"><i class="icon_pencil"></i></a></li>
     		<li class="dropdown" ngDropdown>
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{user.name}}
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon_profile"></i>
             <span class="caret"></span></a>
 
           <ul class="dropdown-menu" role="menu">
