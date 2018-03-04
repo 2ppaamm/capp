@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { House } from '../../../models/house';
 import { Chart } from 'chart.js';
+import { Skill } from '../../../models/skill';
 
 @Component({
   selector: 'ag-teach-detail',
@@ -8,8 +9,9 @@ import { Chart } from 'chart.js';
   styleUrls: ['./teach-detail.component.css']
 })
 export class TeachDetailComponent implements OnInit {
-  @Input() selectedTeach: any;
   @Output() selectedEvent: EventEmitter<House> = new EventEmitter<House>();
+  @Output() selectedVideo: EventEmitter<Skill> = new EventEmitter<Skill>();
+  @Input() selectedTeach: any;
   chartdata: any;
   constructor() { }
 
@@ -18,5 +20,10 @@ export class TeachDetailComponent implements OnInit {
 
   unSelect(house: House) {
   	this.selectedEvent.emit(null);
+  }
+
+  onVideo(skill: Skill) {
+    console.log(skill);
+    this.selectedVideo.emit(skill);
   }
 }

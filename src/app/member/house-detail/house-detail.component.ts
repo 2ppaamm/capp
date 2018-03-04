@@ -23,7 +23,6 @@ export class HouseDetailComponent implements OnInit {
   }
 
   onVideo(skill: Skill) {
-  	console.log(skill);
   	this.selectedVideo.emit(skill);
   }
 

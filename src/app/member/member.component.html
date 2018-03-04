@@ -1,3 +1,6 @@
+<section class="" id="videoplayer">
+	 <ag-video [selectedVideo]= "selectedVideo" (selectedVideo)="outVideo($event)"></ag-video>	
+</section>
 <section class="enrolled" id="userinfo" *ngIf="isAuthenticated()">
 	<ag-userinfo></ag-userinfo>
 </section>	
@@ -15,7 +18,7 @@
 	<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
   </section>
   <section class="enrolled" id="teaching" class="tab-pane fade in">
-    <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)"></ag-teach-detail>
+    <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)" (selectedVideo)= "selectSkill($event)"></ag-teach-detail>
 	<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
   </section>
    <section class="enrolled" id="recommendedcourses" class="tab-pane fade in">
