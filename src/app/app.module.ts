@@ -43,6 +43,10 @@ import { UserinfoComponent } from './member/userinfo/userinfo.component';
 import { VideoComponent } from './member/video/video.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
+export function tokenGetter() {
+    return localStorage.getItem("token");
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +89,13 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    ChartsModule    
+    ChartsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:4200', 'localhost', 'api.pamelalim.me', 'math.pamelalim.me']
+      }
+    })
   ],
   providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]

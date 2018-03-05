@@ -14,7 +14,7 @@ export class AuthService {
     domain: 'pamelalim.auth0.com',
     responseType: 'token id_token',
     audience: 'https://pamelalim.auth0.com/userinfo',
-    redirectUri: 'http://math.pamelalim.me',
+    redirectUri: 'http://localhost:4200/home',
     params: {
         scope: 'openid profile email name picture'
       }    
@@ -86,7 +86,7 @@ export class AuthService {
     localStorage.removeItem('expires_at');
     this.unscheduleRenewal();
     // Go back to the home route
-    this.router.navigate(['/']);
+    this.router.navigate(['/#checkin']);
   }
 
   public isAuthenticated(): boolean {
