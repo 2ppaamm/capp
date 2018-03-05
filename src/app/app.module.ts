@@ -40,8 +40,8 @@ import { ChartComponent } from './member/teach-list/teach-detail/chart/chart.com
 import { BarchartComponent } from './member/teach-list/teach-detail/barchart/barchart.component';
 import { StudentradarComponent } from './member/house-detail/studentradar/studentradar.component';
 import { UserinfoComponent } from './member/userinfo/userinfo.component';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { VideoComponent } from './member/video/video.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -75,8 +75,8 @@ import { VideoComponent } from './member/video/video.component';
     BarchartComponent,
     StudentradarComponent,
     UserinfoComponent,
-    LeaderboardComponent,
-    VideoComponent
+    VideoComponent,
+    LeaderboardComponent
   ],
   imports: [
     routes,
@@ -85,14 +85,6 @@ import { VideoComponent } from './member/video/video.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: () => {
-          return localStorage.getItem('token');
-        },
-        whitelistedDomains: ['localhost:4200', 'localhost']
-      }
-    }),
     ChartsModule    
   ],
   providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],

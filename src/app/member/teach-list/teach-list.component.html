@@ -19,6 +19,6 @@
 	<!-- /END SECTION HEADER -->	
 </div>
 <!-- /END CONTAINER -->
-<div class="container" *ngIf ="! (houses | async)?.length>0">
-	<p>You are teaching any class.</p>
+<div class="container" *ngIf ="(houses | async)?.length<1">
+	<p>You are not teaching any class.</p>
 </div>
