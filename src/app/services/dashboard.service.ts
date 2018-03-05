@@ -6,9 +6,6 @@ import { User } from '../models/user';
 
 @Injectable()
 export class DashboardService {
-   user :any = new User ('1', 'Pamela Lim ', 'Pamela', 'Lim', '(782)-9866535', 'japher@singnet.com.sg', 0, '100','2000','1998-10-29','2017-11-30','2018-03-31','https://angularbooks.com/img/angular4/img1.jpg');
-
-
   constructor(private http: HttpClient) { }
 
   getHouses(): Observable<any> {
