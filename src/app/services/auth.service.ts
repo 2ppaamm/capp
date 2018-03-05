@@ -86,7 +86,7 @@ export class AuthService {
     localStorage.removeItem('expires_at');
     this.unscheduleRenewal();
     // Go back to the home route
-    this.router.navigate(['/#checkin']);
+    this.router.navigate(['/']);
   }
 
   public isAuthenticated(): boolean {
