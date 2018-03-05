@@ -14,11 +14,7 @@ export class AuthService {
     domain: 'pamelalim.auth0.com',
     responseType: 'token id_token',
     audience: 'https://pamelalim.auth0.com/userinfo',
-<<<<<<< HEAD
-    redirectUri: 'http://localhost:4200/home',
-=======
-    redirectUri: 'http://math.pamelalim.me',
->>>>>>> 93516c755523cca0d6e98d49d0d3b40dde50a019
+    redirectUri: 'http://math.pamelalim.me/home',
     params: {
         scope: 'openid profile email name picture'
       }    
