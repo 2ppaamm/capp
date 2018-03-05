@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Skill } from '../../models/skill';
 
 @Component({
@@ -9,7 +9,6 @@ import { Skill } from '../../models/skill';
 
 export class VideoComponent implements OnInit {
   @Input() selectedVideo:Skill;
-  @Output() outVideo: EventEmitter<Skill> = new EventEmitter<Skill>();
 
   constructor() { }
 
@@ -17,7 +16,7 @@ export class VideoComponent implements OnInit {
   }
 
   unSelect(skill: Skill) {
-  	this.outVideo.emit(null);
+  //stop video playing!
   }
 
 }

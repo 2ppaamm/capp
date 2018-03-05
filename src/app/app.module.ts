@@ -47,6 +47,8 @@ export function tokenGetter() {
     return localStorage.getItem("token");
 }
 
+export function tokenGetter(): string { return localStorage.getItem('token'); }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,15 +91,22 @@ export function tokenGetter() {
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+<<<<<<< HEAD
     ChartsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:4200', 'localhost', 'api.pamelalim.me', 'math.pamelalim.me']
+=======
+    JwtModule.forRoot({ 
+      config: { tokenGetter,
+      whitelistedDomains: ['math.pamelalim.me', 'math.all-gifted.com','localhost']
+>>>>>>> 93516c755523cca0d6e98d49d0d3b40dde50a019
       }
     })
   ],
   providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
