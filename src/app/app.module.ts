@@ -42,6 +42,7 @@ import { StudentradarComponent } from './member/house-detail/studentradar/studen
 import { UserinfoComponent } from './member/userinfo/userinfo.component';
 import { VideoComponent } from './member/video/video.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { RouterModule } from '@angular/router';
 
 export function tokenGetter() {
     return localStorage.getItem("token");
