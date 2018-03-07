@@ -101,4 +101,5 @@ export function tokenGetter() {
   providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

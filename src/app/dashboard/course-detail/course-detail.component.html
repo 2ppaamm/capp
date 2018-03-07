@@ -18,9 +18,8 @@
     <div class="buttons wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
       <h3>Classes available for Course: {{selectedCourse.course}}</h3>
       <ul class="package-feature">
-        <li *ngFor="let house of selectedCourse.houses"><a href="" class="btn btn-default btn-lg standard-button"><i class="icon-app-store"></i>
-          {{house.house}} by
-          {{house.created_by.firstname}} {{house.created_by.lastname}}</a></li>
+        <li *ngFor="let house of selectedCourse.houses"><a href="" class="btn btn-default btn-lg standard-button">  Enrol in 
+          {{house.created_by.firstname}} {{house.created_by.lastname}}'s Class</a></li>
       </ul>
     </div>     
   </div>
