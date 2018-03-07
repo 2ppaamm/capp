@@ -11,29 +11,29 @@ export class CourseService {
     constructor(private http: HttpClient) { }
 
     getCourses():Observable<any> {
-    	return this.http.get('http://localhost/courses')
+    	return this.http.get('http://api.pamelalim.me/courses')
     	.map((response) => response)	      
     	.catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
     }
 	addCourse(course: Object): Observable<Course[]> {
-	    return this.http.post('http://localhost/courses', course)
+	    return this.http.post('http://api.pamelalim.me/courses', course)
 	      .map((response) => response)
 	      .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));
 	}
 	getCourse(id: String): Observable<any> {
-	  return this.http.get('http://localhost/courses/' + id)
+	  return this.http.get('http://api.pamelalim.me/courses/' + id)
 	    .map((response) => response['course'])
         .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));
 	}
 	updateCourse(course: Object): Observable<Course[]> {
-	  const apiUrl = 'http://localhost/courses';
+	  const apiUrl = 'http://api.pamelalim.me/courses';
 	  const url = `${apiUrl}/${course['id']}`;
 	  return this.http.put(url, course)
 	    .map((response) => response)
 	    .catch((error: any) => Observable.throw(error.error || {message: 'Server Error'}));
 	}
 	deleteCourse(id: String): Observable<Course[]> {
-	  const apiUrl = 'http://localhost/courses';
+	  const apiUrl = 'http://api.pamelalim.me/courses';
 	  const url = `${apiUrl}/${id}`;
 	  return this.http.delete(url)
 	    .map((response) => response)
