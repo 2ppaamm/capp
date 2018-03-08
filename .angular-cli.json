@@ -5,8 +5,10 @@
   },
   "apps": [
     {
+      "name":"All Gifted",
+      "baseHref":"/",
       "root": "src",
-      "outDir": "dist",
+      "outDir": "math",
       "assets": [
         "assets",
         "favicon.ico",
