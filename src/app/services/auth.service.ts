@@ -7,14 +7,16 @@ import {tokenNotExpired} from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
-  refreshSubscription: any;
-  
+  refreshSubscription: any; 
   auth0 = new auth0.WebAuth({
     clientID: 'eVJv6UFM9GVdukBWiURczRCxmb6iaUYG',
     domain: 'pamelalim.auth0.com',
     responseType: 'token id_token',
     audience: 'https://pamelalim.auth0.com/userinfo',
     redirectUri: 'http://math.pamelalim.me/home',
+    theme: {
+      logo: "http://school.all-gifted.com/pluginfile.php/1/theme_lambda/logo/1472088488/newlogo.png"
+    },
     params: {
         scope: 'openid profile email name picture'
       }    
