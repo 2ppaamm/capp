@@ -94,7 +94,9 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:4200', 'localhost', 'api.pamelalim.me', 'math.pamelalim.me']
+        whitelistedDomains: [
+        'localhost:4200', 'localhost',  'localhost:8000',
+        'api.pamelalim.me', 'math.pamelalim.me', 'quiz.all-gifted.com']
       }
     })
   ],

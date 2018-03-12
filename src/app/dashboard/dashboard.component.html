@@ -1,2 +1,2 @@
-<ag-course-detail [selectedCourse]="selectedCourse"></ag-course-detail>
-<ag-course-list (selectedEvent)="selectCourse($event)"></ag-course-list>
+<ag-landing *ngIf="!isAuthenticated()" ></ag-landing>
+<ag-member *ngIf="isAuthenticated()"></ag-member>

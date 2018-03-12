@@ -1,10 +1,10 @@
 <section class="housedetail" id="house-detail">
   <div *ngIf="selectedHouse">
 	<div class="alert alert-default alert-dismissible">
-	  	<h1>
+	  	<h2>
 	  		<span>Student Page</span>
 	  		<a class="close" data-dismiss="alert" aria-label="close" (click)="unSelect(selectedHouse)"><button>Close Class</button></a>
-		</h1>
+		</h2>
 	    <div class="container house-detail">
 		<p>{{selectedHouse.description}}</p>				
 		<div class="colored-line">
@@ -12,19 +12,20 @@
 
 	    <div class="row">
 	    	<div class="col-sm-6">
-			  <ag-studentradar [radarChartLabels] = "selectedHouse.radarChartLabels" [radarChartData] = "selectedHouse.radarChartData"></ag-studentradar>
+			  <ag-studentradar *ngIf="selectedHouse.radarChartLabels?.length>0" [radarChartLabels] = "selectedHouse.radarChartLabels" [radarChartData] = "selectedHouse.radarChartData"></ag-studentradar>
 			</div>
 			<br>
 			<div class="col-sm-6">
 				<div class="row">
 					<div class="col-sm-6">
 						Course Maxile
+						<a href="#" data-toggle="tooltip" data-placement="right" title="The maximum Maxile for this course is {{selectedHouse.target_score}}"><i class="icon_question"></i></a> 
 					</div>
 					<div class="col-sm-6">
 						<div class="progress">
 							<br />
-								<div class="progress-bar" role="progressbar" [style.width.%]="selectedHouse.course_maxile/selectedHouse.target_score*100" aria-valuenow="selectedHouse.skill_passed" aria-valuemin="0" aria-valuemax="100">
-								{{selectedHouse.course_maxile/selectedHouse.target_score*100 |number : '1.2-2' }}%
+							<div class="progress-bar progress-bar-striped active" role="progressbar" [style.width.%]="selectedHouse.course_maxile/selectedHouse.target_score*100" aria-valuenow="selectedHouse.course_maxile" aria-valuemin="0" aria-valuemax="								selectedHouse.target_score">
+							{{selectedHouse.course_maxile}}
 							</div>
 						</div>				
 					</div>
@@ -36,8 +37,8 @@
 					<div class="col-sm-6">
 						<div class="progress">
 							<br />
-								<div class="progress-bar" role="progressbar" [style.width.%]="selectedHouse.accuracy" aria-valuenow="selectedHouse.accuracy" aria-valuemin="0" aria-valuemax="100">
-								{{selectedHouse.accuracy |number : '1.2-2' }}%
+							<div class="progress-bar progress-bar-striped active" role="progressbar" [style.width.%]="selectedHouse.accuracy" aria-valuenow="selectedHouse.accuracy" aria-valuemin="0" aria-valuemax="100">
+							{{selectedHouse.accuracy |number : '1.2-2' }}%
 							</div>
 						</div>				
 					</div>
@@ -45,12 +46,13 @@
 				<div class="row">
 					<div class="col-sm-6">
 						Skills Passed
+						<a href="#" data-toggle="tooltip" data-placement="right" title="There are a total of {{selectedHouse.total_skills}} skills in this course"><i class="icon_question"></i></a> 
 					</div>
 					<div class="col-sm-6">
 						<div class="progress">
 							<br />
-								<div class="progress-bar" role="progressbar" [style.width.%]="selectedHouse.skill_passed/selectedHouse.total_skills*100" aria-valuenow="selectedHouse.skill_passed" aria-valuemin="0" aria-valuemax="100">
-								{{selectedHouse.skill_passed/selectedHouse.total_skills*100 |number : '1.2-2' }}%
+								<div class="progress-bar progress-bar-striped active" role="progressbar" [style.width.%]="selectedHouse.skill_passed/selectedHouse.total_skills*100" aria-valuenow="selectedHouse.skill_passed" aria-valuemin="0" aria-valuemax="selectedHouse.total_skills">
+								{{selectedHouse.skill_passed}}
 							</div>
 						</div>				
 					</div>
@@ -62,7 +64,7 @@
 					<div class="col-sm-6">
 						<div class="progress">
 							<br />
-								<div class="progress-bar" role="progressbar" [style.width.%]="selectedHouse.tracks_passed/selectedHouse.total_tracks*100" aria-valuenow="selectedHouse.tracks_passed" aria-valuemin="0" aria-valuemax="100">
+								<div class="progress-bar progress-bar-striped active" role="progressbar" [style.width.%]="selectedHouse.tracks_passed/selectedHouse.total_tracks*100" aria-valuenow="selectedHouse.tracks_passed" aria-valuemin="0" aria-valuemax="100">
 								{{selectedHouse.tracks_passed/selectedHouse.total_tracks*100 |number : '1.2-2' }}%
 							</div>
 						</div>				
@@ -77,7 +79,7 @@
 		<div class="row" *ngIf="selectedHouse.tracks?.length>0">
 			<div class="col-xs-12">
 				<div class="container">
-				  <h2>Curriculum</h2>
+				  <h3>Curriculum</h3>
 				  <p>Click on the collapsible panel to open and close tracks.</p>
 				  <div class="panel-group">
 				    <div class="panel panel-default">

@@ -13,9 +13,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo:'/', pathMatch: 'full'},
-  { path: '', component: LandingComponent},
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'home', component: MemberComponent},
+  { path: '', component: DashboardComponent},
   { path: 'leader', component: LeaderboardComponent},
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},

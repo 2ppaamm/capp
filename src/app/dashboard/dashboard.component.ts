@@ -16,11 +16,16 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   	this.dashboard = this.dashboardService.getCourses();
-    console.log(this.dashboard);
   }
 
   selectCourse(course: Course) {
   	this.selectedCourse = course;
   }
 
+   public isAuthenticated(): boolean {
+    // Check whether the current time is past the
+    // access token's expiry time
+    const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+    return new Date().getTime() < expiresAt;
+  }
 }
