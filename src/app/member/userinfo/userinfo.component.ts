@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DashboardService } from '../../services/dashboard.service';
 import {Observable} from 'rxjs/Observable';
 
@@ -8,14 +8,9 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./userinfo.component.css']
 })
 export class UserinfoComponent implements OnInit {
-  user: any;
-  constructor(private dashboardService: DashboardService) { }
+  
+  @Input() user: any;
+  constructor() { }
 
-  ngOnInit() {
-	this.dashboardService.getUser().subscribe(
-	  data => {
-	  	this.user = data;
-	  },
-	  error =>  console.log(<any>error));
-	}
+  ngOnInit() {}
 }

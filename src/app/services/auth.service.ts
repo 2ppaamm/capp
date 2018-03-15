@@ -13,7 +13,7 @@ export class AuthService {
     domain: 'pamelalim.auth0.com',
     responseType: 'token id_token',
     audience: 'https://pamelalim.auth0.com/userinfo',
-    redirectUri: 'http://math.pamelalim.me',
+    redirectUri: 'http://localhost:4200',
     theme: {
       logo: "http://school.all-gifted.com/pluginfile.php/1/theme_lambda/logo/1472088488/newlogo.png"
     },

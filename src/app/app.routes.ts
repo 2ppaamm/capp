@@ -16,8 +16,7 @@ const appRoutes: Routes = [
   { path: '', component: DashboardComponent},
   { path: 'leader', component: LeaderboardComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},
-
+  { path: 'admin', component: AdminComponent, children: adminRoutes}
 ];
 
 export const routes:ModuleWithProviders = RouterModule.forRoot(appRoutes);

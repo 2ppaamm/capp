@@ -43,6 +43,7 @@ import { UserinfoComponent } from './member/userinfo/userinfo.component';
 import { VideoComponent } from './member/video/video.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { RouterModule } from '@angular/router';
+import { QuizComponent } from './member/quiz/quiz.component';
 
 export function tokenGetter() {
     return localStorage.getItem("token");
@@ -81,7 +82,8 @@ export function tokenGetter() {
     StudentradarComponent,
     UserinfoComponent,
     VideoComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    QuizComponent
   ],
   imports: [
     routes,

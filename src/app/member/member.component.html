@@ -2,8 +2,7 @@
 	 <ag-video [selectedVideo]= "selectedVideo"></ag-video>	
 </section>
 <section class="enrolled" id="userinfo" *ngIf="isAuthenticated()">
-	<ag-userinfo></ag-userinfo>
-
+	<ag-userinfo [user]="user"></ag-userinfo>
 	<div class="container">
 		<ul class="nav nav-pills">
 			<li class="active"><a data-toggle="tab" href="#enrolled">Enrolled Classes</a></li>
