@@ -6,6 +6,7 @@ import {AboutComponent} from "./about/about.component";
 import {ModuleWithProviders} from "@angular/core";
 import {AdminComponent} from './admin/admin.component';
 import {adminRoutes} from './admin/admin.routes';
+import {memberRoutes} from './member/member.routes';
 import {AuthGuardService} from './services/auth-guard.service';
 import {MemberComponent} from './member/member.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   { path: '', component: DashboardComponent},
   { path: 'leader', component: LeaderboardComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'admin', component: AdminComponent, children: adminRoutes}
+  { path: 'admin', component: AdminComponent, children: adminRoutes},
+  { path: 'member', component: MemberComponent, children: memberRoutes}
 ];
 
 export const routes:ModuleWithProviders = RouterModule.forRoot(appRoutes);

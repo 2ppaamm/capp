@@ -1,7 +1,11 @@
 <section class="" id="videoplayer">
 	 <ag-video [selectedVideo]= "selectedVideo"></ag-video>	
 </section>
-<section class="enrolled" id="userinfo" *ngIf="isAuthenticated()">
+
+<section class="screenshots grey-bg" id="courses">
+
+<div class="container">
+  
 	<ag-userinfo [user]="user"></ag-userinfo>
 	<div class="container">
 		<ul class="nav nav-pills">
@@ -33,4 +37,5 @@
 		</div>
 	   </section>
 	</div>
+ </div>
 </section>

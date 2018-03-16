@@ -23,7 +23,6 @@ export class AdminCourseEditComponent implements OnInit, OnDestroy {
     this.courseService.getCourse(this.id).subscribe(
 	  data => {
 	    this.course = data;
-      console.log(this.course.description);
 	  },
 	  error =>  console.log(<any>error));
   }
@@ -35,7 +34,6 @@ export class AdminCourseEditComponent implements OnInit, OnDestroy {
   this.courseService.updateCourse(course)
     .subscribe(
       course  => {
-        console.log(course);
         this.status = 'success';
         this.message = course['message'];
       },

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Skill } from '../../models/skill';
+declare var jQuery:any;
+declare var $ :any;
 
 @Component({
   selector: 'ag-video',
@@ -15,8 +17,11 @@ export class VideoComponent implements OnInit {
   ngOnInit() {
   }
 
-  unSelect(skill: Skill) {
-  //stop video playing!
+  unSelect() {
+    $('body').on('hidden.bs.modal', '.modal', function () {
+      $('video').trigger('pause');
+      });
+    this.selectedVideo['lesson_link']=null;
   }
 
 }

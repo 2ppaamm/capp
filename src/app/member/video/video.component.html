@@ -5,9 +5,10 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" (click)="unSelect()">&times;</button>
           <h4 class="modal-title">{{selectedVideo.skill}}</h4>
           <p>{{selectedVideo.description}}</p>
+          <p>Lesson Link: {{selectedVideo.lesson_link}}</p>
         </div>
         <div class="modal-body">
           <div class="embed-responsive embed-responsive-16by9">
@@ -18,7 +19,7 @@
           </div>        
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="unSelect()">Close</button>
         </div>
       </div>
     </div>
