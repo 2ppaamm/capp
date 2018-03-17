@@ -18,10 +18,7 @@ export class VideoComponent implements OnInit {
   }
 
   unSelect() {
-    $('body').on('hidden.bs.modal', '.modal', function () {
-      $('video').trigger('pause');
-      });
-    this.selectedVideo['lesson_link']=null;
+      $('video').first().attr('src','');
   }
 
 }

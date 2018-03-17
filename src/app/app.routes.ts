@@ -10,15 +10,17 @@ import {memberRoutes} from './member/member.routes';
 import {AuthGuardService} from './services/auth-guard.service';
 import {MemberComponent} from './member/member.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo:'/', pathMatch: 'full'},
   { path: '', component: DashboardComponent},
+  { path: 'login', component: LoginComponent},
   { path: 'leader', component: LeaderboardComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'admin', component: AdminComponent, children: adminRoutes},
-  { path: 'member', component: MemberComponent, children: memberRoutes}
+  { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},
+  { path: 'member', component: MemberComponent, children: memberRoutes, canActivate: [AuthGuardService]}
 ];
 
 export const routes:ModuleWithProviders = RouterModule.forRoot(appRoutes);

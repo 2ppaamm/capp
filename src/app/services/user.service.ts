@@ -11,12 +11,12 @@ export class UserService {
   }
 
   addUser(user: Object): Observable<User[]> {
-    return this.http.post('http://localhost/users', user)
+    return this.http.post('http://localhost:8000/users', user)
       .map((response) => response)
       .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'}));
   }
   getUsers(): Observable<User[]> {
-    return this.http.get('http://localhost/users')
+    return this.http.get('http://localhost:8000/users')
       .map((response) => response)
       .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'}));
   }

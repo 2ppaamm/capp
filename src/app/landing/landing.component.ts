@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../models/course';
 import { CourseService } from '../services/course.service';
-import { AuthService } from '../services/auth.service';
 declare var jQuery:any;
 declare var $ :any;
 
@@ -14,7 +13,7 @@ export class LandingComponent implements OnInit {
 
   courses: any;
   selectedCourse: Course;
-  constructor(private courseService: CourseService, private authService:AuthService) { }
+  constructor(private courseService: CourseService) { }
 
   ngOnInit() {
 	/* =================================
@@ -62,13 +61,9 @@ export class LandingComponent implements OnInit {
   	this.courses = this.courseService.getCourses();
   }
 
-  selectCourse(course: Course) {
-  	this.selectedCourse = course;
-  }
-
-  public login(){
-  	this.authService.login();
-  }
+   selectCourse(course: Course) {
+     this.selectedCourse = course;
+   }
 
    public isAuthenticated(): boolean {
     // Check whether the current time is past the

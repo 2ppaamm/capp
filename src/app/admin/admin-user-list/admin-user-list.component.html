@@ -1,30 +1,59 @@
-<div class="col-md-10 col-md-offset-1">
-  <div>
-    <a [routerLink]="['/admin/']" class="btn btn-default"> Back</a>
-    <a [routerLink]="['/admin/users/create']" class="btn btn-success"> New User</a>
+<section class="screenshots grey-bg" id="adminusers">
+
+<div class="container">
+  
+  <!-- SECTION HEADER -->
+  <div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+    
+    <!-- SECTION TITLE -->
+    <h2 class="dark-text">All Users</h2>
+    
+    <div class="colored-line">
+    </div>
+    
+  </div>
+  <div class="col-md-10 col-md-offset-1">
+    <div>
+      <a [routerLink]="['/admin/']" class="btn btn-default"> Back</a>
+      <a [routerLink]="['/admin/users/create']" class="btn btn-success"> New User</a>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+        	<th>User</th>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Name</th>
+          <th>Admin?</th>
+          <th>Maxile Level</th>
+          <th>Game Level</th>
+          <th>Date of Birth</th>
+          <th>Last Test Date</th>
+        </tr>
+        </thead>
+        <tbody align="left">
+
+        <tr *ngFor="let user of users| async">
+          <td><img src="{{user.image}}" width="75"/></td>
+          <td>{{user.email}} </td>
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.is_admin}}</td>
+          <td>{{user.maxile_level}}</td>
+          <td>{{user.game_level}}</td>
+          <td>{{user.date_of_birth}}</td>
+          <td>{{user.last_test_date}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-
-<div class="col-md-10 col-md-offset-1">
-
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-      <tr>
-      	<th>User</th>
-        <th>Email</th>
-        <th>Name</th>
-      </tr>
-      </thead>
-      <tbody>
-
-      <tr *ngFor="let user of users| async">
-        <td><img src="{{user.image}}" width="75"/></td>
-        <td>{{user.email}} </td>
-        <td>{{user.name}}</td>
-      </tr>
-
-      </tbody>
-    </table>
-  </div>
-</div>
+</section>

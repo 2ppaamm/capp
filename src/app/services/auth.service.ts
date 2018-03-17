@@ -84,7 +84,7 @@ export class AuthService {
   public logout(): void {
     // Remove tokens and expiry time from localStorage
     localStorage.removeItem('access_token');
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('token');
     localStorage.removeItem('expires_at');
     this.unscheduleRenewal();
     // Go back to the home route
