@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { House } from '../../models/house';
 import { Skill } from '../../models/skill';
+declare var jQuery:any;
+declare var $ :any;
 
 @Component({
   selector: 'ag-house-detail',

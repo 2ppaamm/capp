@@ -15,6 +15,7 @@ export class VideoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+      this.selectedVideo ? $('video').first().attr('src', this.selectedVideo['lesson_link']):null;
   }
 
   unSelect() {

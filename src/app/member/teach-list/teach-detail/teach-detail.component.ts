@@ -2,6 +2,9 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { House } from '../../../models/house';
 import { Chart } from 'chart.js';
 import { Skill } from '../../../models/skill';
+declare var jQuery:any;
+declare var $ :any;
+import { TrackService } from '../../../services/track.service';
 
 @Component({
   selector: 'ag-teach-detail',
@@ -13,7 +16,11 @@ export class TeachDetailComponent implements OnInit {
   @Output() selectedVideo: EventEmitter<Skill> = new EventEmitter<Skill>();
   @Input() selectedTeach: any;
   chartdata: any;
-  constructor() { }
+  addTrackOn: any = false;
+  fields: any;
+  levels: any;
+  statuses: any;
+  constructor(private trackService:TrackService) { }
 
   ngOnInit() {
   }
@@ -23,7 +30,10 @@ export class TeachDetailComponent implements OnInit {
   }
 
   onVideo(skill: Skill) {
-    console.log(skill);
     this.selectedVideo.emit(skill);
+  }
+
+  createTrack(){
+    this.addTrackOn = this.addTrackOn ? false:true;
   }
 }

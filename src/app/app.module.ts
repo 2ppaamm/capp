@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CourseListComponent } from './dashboard/course-list/course-list.component';
 import { CourseComponent } from './dashboard/course-list/course.component';
 import { CourseService } from './services/course.service';
+import { TrackService } from './services/track.service';
+import { UserService } from './services/user.service';
 import { DashboardService } from './services/dashboard.service';
 import { CourseDetailComponent } from './dashboard/course-detail/course-detail.component';
 import { ContactComponent } from './contact/contact.component';
@@ -19,8 +21,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminCourseCreateComponent } from './admin/admin-course-create/admin-course-create.component';
 import { AdminCourseEditComponent } from './admin/admin-course-edit/admin-course-edit.component';
 import { AdminCourseDeleteComponent } from './admin/admin-course-delete/admin-course-delete.component';
-import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-create.component';
-import { UserService } from './services/user.service';
 import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.component';
 import { AuthService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -46,6 +46,9 @@ import { RouterModule } from '@angular/router';
 import { QuizComponent } from './member/quiz/quiz.component';
 import { MemberDashboardComponent } from './member/member-dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './pagenotfound.component';
+import { UserProfileComponent } from './member/user-profile/user-profile.component';
+import { TrackCreateComponent } from './member/track-create/track-create.component';
 
 export function tokenGetter() {
     return localStorage.getItem("token");
@@ -67,7 +70,6 @@ export function tokenGetter() {
     AdminCourseCreateComponent,
     AdminCourseEditComponent,
     AdminCourseDeleteComponent,
-    AdminUserCreateComponent,
     AdminUserListComponent,
     LandingComponent,
     MemberComponent,
@@ -87,7 +89,10 @@ export function tokenGetter() {
     LeaderboardComponent,
     QuizComponent,
     MemberDashboardComponent,
-    LoginComponent
+    LoginComponent,
+    PageNotFoundComponent,
+    UserProfileComponent,
+    TrackCreateComponent,
   ],
   imports: [
     routes,
@@ -106,7 +111,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [CourseService, DashboardService, UserService, AuthService, AuthGuardService],
+  providers: [TrackService, CourseService, DashboardService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 

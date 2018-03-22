@@ -94,6 +94,7 @@
 									<thead>
 										<tr>
 											<th>Skill</th>
+											<th>Description</th>
 											<th>My Score
 												<a data-toggle="tooltip" title="Max score for skills on {{track.track}} is {{track.level_id *100 |number : '1.2-2'}}"><sup><i class="icon_target"></i></sup></a>
 											</th>
@@ -103,6 +104,7 @@
 									<tbody>
 										<tr *ngFor="let skill of track.skills">
 											<td>{{skill.skill}}</td>
+											<td>{{skill.description}}</td>
 											<td>
 												<div *ngIf ="skill.skill_maxile; else nothing">{{skill.skill_maxile.skill_maxile}}</div>
 												<ng-template #nothing align="left">0</ng-template>

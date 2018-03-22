@@ -11,7 +11,7 @@ import {AuthGuardService} from './services/auth-guard.service';
 import {MemberComponent} from './member/member.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { LoginComponent } from './login/login.component';
-
+import { PageNotFoundComponent } from './pagenotfound.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo:'/', pathMatch: 'full'},
@@ -20,7 +20,8 @@ const appRoutes: Routes = [
   { path: 'leader', component: LeaderboardComponent},
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},
-  { path: 'member', component: MemberComponent, children: memberRoutes, canActivate: [AuthGuardService]}
+  { path: 'member', component: MemberComponent, children: memberRoutes, canActivate: [AuthGuardService]},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 export const routes:ModuleWithProviders = RouterModule.forRoot(appRoutes);

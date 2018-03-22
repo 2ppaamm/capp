@@ -1,0 +1,47 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { TrackService} from '../../services/track.service';
+import { Router} from '@angular/router';
+import { House } from '../../models/house';
+
+@Component({
+  selector: 'ag-track-create',
+  templateUrl: './track-create.component.html',
+  styleUrls: ['./track-create.component.css']
+})
+
+export class TrackCreateComponent implements OnInit, Input {
+  @Input() house:House;
+  status: string;
+  message: string;
+  fields: any;
+  levels: any;
+  statuses: any;
+
+  constructor(private trackService: TrackService, private router:Router) { }
+
+  ngOnInit() {
+    this.trackService.createTrack().subscribe(
+      data => {
+        this.fields = data['fields'];
+        this.levels = data['levels'];
+        this.statuses = data['statuses']
+      },
+      error =>  console.log(<any>error)); 
+  }
+
+  addTrack(track) {
+   this.trackService.addTrack(track)
+   .subscribe(
+     track  => {
+       this.router.navigate(['/']);
+       this.status = 'success';
+       this.message = track['message'];
+     },
+     error => {
+       console.log(<any>error);
+       this.status = 'success';
+       this.message = error['message'];
+     }
+   );
+  }
+}
