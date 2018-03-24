@@ -10,12 +10,14 @@ import { House } from '../../models/house';
 })
 
 export class TrackCreateComponent implements OnInit, Input {
-  @Input() house:House;
-  status: string;
-  message: string;
-  fields: any;
-  levels: any;
-  statuses: any;
+	@Input() house:House;
+	status: string;
+	message: string;
+	fields: any;
+	levels: any;
+	statuses: any;
+	my_tracks: any;
+	public_tracks: any;
 
   constructor(private trackService: TrackService, private router:Router) { }
 
@@ -24,7 +26,9 @@ export class TrackCreateComponent implements OnInit, Input {
       data => {
         this.fields = data['fields'];
         this.levels = data['levels'];
-        this.statuses = data['statuses']
+        this.statuses = data['statuses'];
+        this.my_tracks = data['my_tracks'];
+        this.public_tracks = data['public_tracks'];
       },
       error =>  console.log(<any>error)); 
   }

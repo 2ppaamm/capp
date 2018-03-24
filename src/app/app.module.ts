@@ -49,6 +49,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './pagenotfound.component';
 import { UserProfileComponent } from './member/user-profile/user-profile.component';
 import { TrackCreateComponent } from './member/track-create/track-create.component';
+import { TrackEditComponent } from './member/track-edit/track-edit.component';
 
 export function tokenGetter() {
     return localStorage.getItem("token");
@@ -93,6 +94,7 @@ export function tokenGetter() {
     PageNotFoundComponent,
     UserProfileComponent,
     TrackCreateComponent,
+    TrackEditComponent,
   ],
   imports: [
     routes,
