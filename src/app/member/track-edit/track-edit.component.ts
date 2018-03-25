@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Track } from '../../models/track';
 
 @Component({
   selector: 'ag-track-edit',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./track-edit.component.css']
 })
 export class TrackEditComponent implements OnInit {
+  @Input() track:Track;
 
   constructor() { }
 

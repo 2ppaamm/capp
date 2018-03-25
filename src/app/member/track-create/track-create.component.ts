@@ -2,7 +2,6 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { TrackService} from '../../services/track.service';
 import { Router} from '@angular/router';
 import { House } from '../../models/house';
-import { Track } from '../../models/track';
 
 @Component({
   selector: 'ag-track-create',
@@ -20,7 +19,6 @@ export class TrackCreateComponent implements OnInit, Input {
 	my_tracks: any;
 	public_tracks: any;
 	@Output() selectedTeach: EventEmitter<House> = new EventEmitter<House>();
-	new_track: Track;
 
   constructor(private trackService: TrackService, private router:Router) { }
 
