@@ -36,4 +36,8 @@ export class TeachDetailComponent implements OnInit {
   createTrack(){
     this.addTrackOn = this.addTrackOn ? false:true;
   }
+
+  editTrack(track){
+    alert("Trackedit");
+  }
 }

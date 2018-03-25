@@ -30,6 +30,7 @@ export class AdminCourseEditComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.params.unsubscribe();
   }
+
   updateCourse(course) {
   this.courseService.updateCourse(course)
     .subscribe(

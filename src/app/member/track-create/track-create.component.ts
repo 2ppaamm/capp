@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { TrackService} from '../../services/track.service';
 import { Router} from '@angular/router';
 import { House } from '../../models/house';
+import { Track } from '../../models/track';
 
 @Component({
   selector: 'ag-track-create',
@@ -18,6 +19,8 @@ export class TrackCreateComponent implements OnInit, Input {
 	statuses: any;
 	my_tracks: any;
 	public_tracks: any;
+	@Output() selectedTeach: EventEmitter<House> = new EventEmitter<House>();
+	new_track: Track;
 
   constructor(private trackService: TrackService, private router:Router) { }
 
@@ -40,6 +43,9 @@ export class TrackCreateComponent implements OnInit, Input {
        this.router.navigate(['/']);
        this.status = 'success';
        this.message = track['message'];
+       this.my_tracks.push(track['track']);
+       this.house['tracks'].push(track['track']);
+       console.log(this.house);
      },
      error => {
        console.log(<any>error);

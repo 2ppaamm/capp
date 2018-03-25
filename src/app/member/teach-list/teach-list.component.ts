@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { DashboardService } from '../../services/dashboard.service';
-import {Observable} from 'rxjs/Observable';
 import { House } from '../../models/house';
 
 @Component({

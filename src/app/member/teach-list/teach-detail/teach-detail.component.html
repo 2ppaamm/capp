@@ -135,6 +135,7 @@
 										<button type="button" *ngIf="addTrackOn" (click)="createTrack()" class="m-btn btn">-</button></th>
 									<th>Status</th>
 									<th>Field</th>
+									<th>Level</th>
 									<th>Action</th>
 								</tr>
 								<tr>
@@ -148,10 +149,11 @@
 									</td>
 									<td>{{track.status.status}}</td>
 									<td>{{track.field.field}}</td>
+									<td>{{track.level.level}}</td>
 									<td>
 										<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 											<div class="btn-group" role="group" aria-label="First group">
-												<button type="button" class="m-btn btn btn-edit"><i class="icon_pencil-edit"></i></button>
+												<button type="button" class="m-btn btn btn-edit"><i class="icon_pencil-edit" (click)="editTrack(track)"></i></button>
 												<button type="button" class="m-btn btn btn-delete"><i class="icon_minus_alt2"></i></button>
 											</div>
 										</div>
