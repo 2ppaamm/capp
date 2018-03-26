@@ -15,11 +15,15 @@ export class TeachDetailComponent implements OnInit {
   @Output() selectedEvent: EventEmitter<House> = new EventEmitter<House>();
   @Output() selectedVideo: EventEmitter<Skill> = new EventEmitter<Skill>();
   @Input() selectedTeach: any;
+  @Input() user: any;
   chartdata: any;
   addTrackOn: any = false;
+  editTrackOn: any = false;
   fields: any;
   levels: any;
   statuses: any;
+  selectedTrackEdit: any;
+
   constructor(private trackService:TrackService) { }
 
   ngOnInit() {
@@ -37,7 +41,8 @@ export class TeachDetailComponent implements OnInit {
     this.addTrackOn = this.addTrackOn ? false:true;
   }
 
-  editTrack(track){
-    alert("Trackedit");
+  editSelectedTrack(track){
+    this.editTrackOn = true;
+    this.selectedTrackEdit=track;
   }
 }

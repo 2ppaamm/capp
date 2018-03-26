@@ -20,7 +20,7 @@
 		<ag-house-list (selectedEvent) = "selectHouse($event)"></ag-house-list>
 	  </section>
 	  <section class="enrolled" id="teaching" class="tab-pane fade in">
-	    <ag-teach-detail [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)" (selectedVideo)= "selectSkill($event)"></ag-teach-detail>
+	    <ag-teach-detail [user]="user" [selectedTeach] = "selectedTeach" (selectedEvent)="selectTeach($event)" (selectedVideo)= "selectSkill($event)"></ag-teach-detail>
 		<ag-teach-list (selectedEvent) = "selectTeach($event)"></ag-teach-list>
 	  </section>
 	   <section class="enrolled" id="recommendedcourses" class="tab-pane fade in">
