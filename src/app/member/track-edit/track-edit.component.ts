@@ -8,7 +8,7 @@ import { TrackService } from '../../services/track.service';
   styleUrls: ['./track-edit.component.css']
 })
 export class TrackEditComponent implements OnInit {
-  status: string;
+  state: string;
   message: string;
   @Input() track:Track;
   fields: any;
@@ -32,15 +32,21 @@ export class TrackEditComponent implements OnInit {
   this.trackService.updateTrack(track)
     .subscribe(
       track  => {
-        this.status = 'success';
+        this.state = 'success';
         this.message = track['message'];
+        this.track = track['track'];
+        console.log(this.track);
       },
       error => { 
         console.log(<any>error);
-        this.status = 'success';
+        this.state = 'success';
         this.message = error['message'];
       }
     );
   }
 
+  closeEditModal(){
+  	this.message=null;
+  	this.state=null;
+  }
 }
