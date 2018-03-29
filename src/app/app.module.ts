@@ -8,6 +8,7 @@ import { CourseListComponent } from './dashboard/course-list/course-list.compone
 import { CourseComponent } from './dashboard/course-list/course.component';
 import { CourseService } from './services/course.service';
 import { TrackService } from './services/track.service';
+import { HouseTrackService } from './services/house-track.service';
 import { UserService } from './services/user.service';
 import { DashboardService } from './services/dashboard.service';
 import { CourseDetailComponent } from './dashboard/course-detail/course-detail.component';
@@ -50,6 +51,7 @@ import { PageNotFoundComponent } from './pagenotfound.component';
 import { UserProfileComponent } from './member/user-profile/user-profile.component';
 import { TrackCreateComponent } from './member/track-create/track-create.component';
 import { TrackEditComponent } from './member/track-edit/track-edit.component';
+import { TrackDeleteComponent } from './member/track-delete/track-delete.component';
 
 export function tokenGetter() {
     return localStorage.getItem("token");
@@ -95,6 +97,7 @@ export function tokenGetter() {
     UserProfileComponent,
     TrackCreateComponent,
     TrackEditComponent,
+    TrackDeleteComponent,
   ],
   imports: [
     routes,
@@ -113,7 +116,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [TrackService, CourseService, DashboardService, UserService, AuthService, AuthGuardService],
+  providers: [TrackService, CourseService, DashboardService, UserService, AuthService, AuthGuardService, HouseTrackService],
   bootstrap: [AppComponent]
 })
 

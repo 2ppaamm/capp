@@ -1,6 +1,7 @@
 <!--Begin::Section-->
 <section  *ngIf="selectedTeach" id="teach-detail">
 	<ag-track-edit [track]="selectedTrackEdit" *ngIf="editTrackOn"></ag-track-edit>
+	<ag-track-delete [track]="delete_Track" [house]="selectedTeach" *ngIf="deleteTrackOn"></ag-track-delete>
 	<div class="alert alert-default alert-dismissible">
 	  <a class="close" data-dismiss="alert" aria-label="close" (click)="unSelect(selectedTeach)">Close Class</a>
 	  <div class="container house-detail">
@@ -156,8 +157,8 @@
 									<td>
 										<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 											<div class="btn-group" role="group" aria-label="First group">
-												<button *ngIf="track.owner.name === user.name" type="button" class="m-btn btn btn-edit"  data-toggle="modal" data-target="#editTrack" (click)="editSelectedTrack(track)"><i class="icon_pencil-edit"></i></button>
-												<button type="button" class="m-btn btn btn-delete"><i class="icon_minus_alt2"></i></button>
+												<button *ngIf="track.owner.name === user.name" type="button" class="m-btn btn btn-edit" data-toggle="modal" data-target="#editTrack" (click)="editSelectedTrack(track)"><i class="icon_pencil-edit"></i></button>
+												<button type="button" class="m-btn btn btn-delete" (click)="deleteSelectedTrack(track)" data-toggle="modal" data-target="#deleteTrack"><i class="icon_minus_alt2"></i></button>
 											</div>
 										</div>
 									</td>

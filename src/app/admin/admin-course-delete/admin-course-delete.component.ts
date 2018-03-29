@@ -14,16 +14,14 @@ export class AdminCourseDeleteComponent implements OnInit, OnDestroy {
   constructor(private activatedRoute:ActivatedRoute, private courseService: CourseService, private router:Router) { }
 
   ngOnInit() {
-	this.params = this.activatedRoute.params.subscribe(params => this.id = params['id']);
-	this.courseService.deleteCourse(this.id).subscribe(
-	data => {
-	  console.log(data);
-	  this.router.navigate(['/admin/courses']);
-    },
-	error =>  console.log(<any>error));
-  }
-  ngOnDestroy() {
-    this.params.unsubscribe();
-  }
-
+  	this.params = this.activatedRoute.params.subscribe(params => this.id = params['id']);
+  	this.courseService.deleteCourse(this.id).subscribe(
+  	data => {
+  	  this.router.navigate(['/admin/courses']);
+      },
+  	error =>  console.log(<any>error));
+    }
+    ngOnDestroy() {
+      this.params.unsubscribe();
+    }
 }

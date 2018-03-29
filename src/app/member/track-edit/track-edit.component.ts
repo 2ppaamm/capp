@@ -29,21 +29,20 @@ export class TrackEditComponent implements OnInit {
   }
 
   updateTrack(track) {
-  this.trackService.updateTrack(track)
-    .subscribe(
-      track  => {
-        this.state = 'success';
-        this.message = track['message'];
-        this.track = track['track'];
-        console.log(this.track);
-      },
-      error => { 
-        console.log(<any>error);
-        this.state = 'success';
-        this.message = error['message'];
-      }
-    );
-  }
+	  this.trackService.updateTrack(track)
+	    .subscribe(
+	      track  => {
+	        this.state = 'success';
+	        this.message = track['message'];
+	        this.track = track['track'];
+	      },
+	      error => { 
+	        console.log(<any>error);
+	        this.state = 'error';
+	        this.message = error['message'];
+	      }
+	    );
+	  }
 
   closeEditModal(){
   	this.message=null;

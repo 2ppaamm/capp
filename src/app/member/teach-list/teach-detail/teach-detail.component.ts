@@ -17,12 +17,14 @@ export class TeachDetailComponent implements OnInit {
   @Input() selectedTeach: any;
   @Input() user: any;
   chartdata: any;
-  addTrackOn: any = false;
-  editTrackOn: any = false;
+  addTrackOn: boolean = false;
+  editTrackOn: boolean = false;
+  deleteTrackOn:boolean = false;
   fields: any;
   levels: any;
   statuses: any;
   selectedTrackEdit: any;
+  delete_Track: any;
 
   constructor(private trackService:TrackService) { }
 
@@ -44,5 +46,10 @@ export class TeachDetailComponent implements OnInit {
   editSelectedTrack(track){
     this.editTrackOn = true;
     this.selectedTrackEdit=track;
+  }
+
+  deleteSelectedTrack(track){
+    this.delete_Track=track;
+    this.deleteTrackOn=true;
   }
 }
