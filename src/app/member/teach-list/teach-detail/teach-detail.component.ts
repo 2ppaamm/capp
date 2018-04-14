@@ -5,6 +5,7 @@ import { Skill } from '../../../models/skill';
 declare var jQuery:any;
 declare var $ :any;
 import { TrackService } from '../../../services/track.service';
+import { SkillService } from '../../../services/skill.service';
 
 @Component({
   selector: 'ag-teach-detail',
@@ -20,13 +21,18 @@ export class TeachDetailComponent implements OnInit {
   addTrackOn: boolean = false;
   editTrackOn: boolean = false;
   deleteTrackOn:boolean = false;
+  selectedTrackEdit: any;
+  delete_Track: any;
+  addSkillOn: boolean = false;
+  editSkillOn: boolean = false;
+  deleteSkillOn:boolean = false;
+  selectedSkillEdit: any;
+  delete_Skill: any;
   fields: any;
   levels: any;
   statuses: any;
-  selectedTrackEdit: any;
-  delete_Track: any;
 
-  constructor(private trackService:TrackService) { }
+  constructor(private trackService:TrackService, private skillService:SkillService) { }
 
   ngOnInit() {
   }
@@ -51,5 +57,18 @@ export class TeachDetailComponent implements OnInit {
   deleteSelectedTrack(track){
     this.delete_Track=track;
     this.deleteTrackOn=true;
+  }
+  createSkill(){
+    this.addSkillOn = this.addSkillOn ? false:true;
+  }
+
+  editSelectedSkill(skill){
+    this.editSkillOn = true;
+    this.selectedSkillEdit=skill;
+  }
+
+  deleteSelectedSkill(skill){
+    this.delete_Skill=skill;
+    this.deleteSkillOn=true;
   }
 }
