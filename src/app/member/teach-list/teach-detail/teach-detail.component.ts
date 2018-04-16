@@ -27,7 +27,8 @@ export class TeachDetailComponent implements OnInit {
   editSkillOn: boolean = false;
   deleteSkillOn:boolean = false;
   selectedSkillEdit: any;
-  delete_Skill: any;
+  delete_skill: any;
+  delete_skill_track:any;
   fields: any;
   levels: any;
   statuses: any;
@@ -67,8 +68,10 @@ export class TeachDetailComponent implements OnInit {
     this.selectedSkillEdit=skill;
   }
 
-  deleteSelectedSkill(skill){
-    this.delete_Skill=skill;
+  deleteSelectedSkill(skill,track){
+    console.log(track.track);
+    this.delete_skill_track=track;
+    this.delete_skill=skill;
     this.deleteSkillOn=true;
   }
 }

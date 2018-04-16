@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SkillService} from '../services/skill.service';
+import { SkillService} from '../../services/skill.service';
 import { Router} from '@angular/router';
-import { Track } from '../models/track';
-import { Skill } from '../models/skill';
+import { Track } from '../../models/track';
+import { Skill } from '../../models/skill';
 
 @Component({
   selector: 'ag-skill-create',

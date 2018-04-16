@@ -18,7 +18,6 @@ export class TrackEditComponent implements OnInit {
   constructor(private trackService:TrackService) { }
 
   ngOnInit() {
-  	console.log(this.track);
     this.trackService.createTrack().subscribe(
       data => {
         this.fields = data['fields'];

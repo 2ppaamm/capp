@@ -10,6 +10,7 @@ import { CourseService } from './services/course.service';
 import { TrackService } from './services/track.service';
 import { SkillService } from './services/skill.service';
 import { HouseTrackService } from './services/house-track.service';
+import { SkillTrackService } from './services/skill-track.service';
 import { UserService } from './services/user.service';
 import { DashboardService } from './services/dashboard.service';
 import { CourseDetailComponent } from './dashboard/course-detail/course-detail.component';
@@ -53,7 +54,9 @@ import { UserProfileComponent } from './member/user-profile/user-profile.compone
 import { TrackCreateComponent } from './member/track-create/track-create.component';
 import { TrackEditComponent } from './member/track-edit/track-edit.component';
 import { TrackDeleteComponent } from './member/track-delete/track-delete.component';
-import { SkillCreateComponent } from './skill-create/skill-create.component';
+import { SkillCreateComponent } from './member/skill-create/skill-create.component';
+import { SkillEditComponent } from './member/skill-edit/skill-edit.component';
+import { SkillDeleteComponent } from './member/skill-delete/skill-delete.component';
 
 export function tokenGetter() {
     return localStorage.getItem("token");
@@ -101,6 +104,8 @@ export function tokenGetter() {
     TrackEditComponent,
     TrackDeleteComponent,
     SkillCreateComponent,
+    SkillEditComponent,
+    SkillDeleteComponent,
   ],
   imports: [
     routes,
@@ -119,7 +124,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [TrackService, CourseService, DashboardService, UserService, AuthService, AuthGuardService, HouseTrackService, SkillService],
+  providers: [TrackService, CourseService, DashboardService, UserService, AuthService, AuthGuardService, HouseTrackService, SkillService, SkillTrackService],
   bootstrap: [AppComponent]
 })
 
