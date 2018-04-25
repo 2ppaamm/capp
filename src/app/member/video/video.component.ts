@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Skill } from '../../models/skill';
 declare var jQuery:any;
 declare var $ :any;
@@ -10,16 +11,21 @@ declare var $ :any;
 })
 
 export class VideoComponent implements OnInit {
-  @Input() selectedVideo:Skill;
+  params: any;
+  id: any;
 
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute,) { }
 
   ngOnInit() {
-      this.selectedVideo ? $('video').first().attr('src', this.selectedVideo['lesson_link']):null;
+    this.params = this.activatedRoute.params.subscribe(params => this.id = params['id']);
+    console.log(this.activatedRoute.snapshot.url);
   }
 
   unSelect() {
-      $('video').first().attr('src','');
+    $('video').first().attr('src','');
   }
 
+  ngOnDestroy() {
+    this.params.unsubscribe();
+  }
 }

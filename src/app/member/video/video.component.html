@@ -1,27 +1,4 @@
-<div class="container" *ngIf="selectedVideo">
-  <!-- Trigger the modal with a button -->
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" (click)="unSelect()">&times;</button>
-          <h4 class="modal-title">{{selectedVideo.skill}}</h4>
-          <p>{{selectedVideo.description}}</p>
-          <p>Lesson Link: {{selectedVideo.lesson_link}}</p>
-        </div>
-        <div class="modal-body">
-          <div class="embed-responsive embed-responsive-16by9">
               <video width="1000" controls>
-                <source src="" type="video/mp4">
+                <source src="{{id}}" type="video/mp4">
                   Your browser does not support HTML5 video.
               </video>
-          </div>        
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="unSelect()">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

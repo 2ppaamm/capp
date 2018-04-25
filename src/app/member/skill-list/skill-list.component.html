@@ -1,0 +1,20 @@
+<tr>
+	<td>{{skill.skill}}</td>
+	<td>
+		<div *ngIf ="skill.skill_maxile; else nothing">{{skill.skill_maxile.skill_maxile}}</div>
+		<ng-template #nothing align="left">0</ng-template>
+	</td>
+	<td>
+	  <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+	    <a [routerLink]="['/member/quiz']" data-toggle="tooltip" title="Click to do a quiz on {{skill.skill}}">
+	    	<button type="button" class="m-btn btn btn-quiz"><i class="icon_puzzle"></i>
+			</button>
+		</a>
+	    <!--a [routerLink]="['/member/video']" data-toggle="tooltip" title="Click to watch video on {{skill.skill}}">
+	    	<button type="button" class="m-btn btn btn-video" ><i class="arrow_triangle-right_alt2"></i>
+	    	</button>
+	    </a-->
+		<a href="#" data-toggle="tooltip" title="Click to watch video on {{skill.skill}}"><button (click)="onVideo(skill)" type="button" class="m-btn btn btn-video" data-toggle="modal" data-target="#videoModal"><i class="arrow_triangle-right_alt2"></i></button></a>
+	  </div>
+	</td>
+</tr>

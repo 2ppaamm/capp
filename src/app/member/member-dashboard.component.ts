@@ -21,6 +21,7 @@ export class MemberDashboardComponent implements OnInit {
   selectedCourse: Course;
   selectedTeach: House;
   selectedVideo: Skill;
+  videolink:any;
   user: Observable<any>;
 
   constructor(private dashboardService: DashboardService) { }
@@ -47,6 +48,7 @@ export class MemberDashboardComponent implements OnInit {
 
   selectSkill(skill: Skill) {
     this.selectedVideo = skill;
+    this.videolink = "member/video/videos%2Fnumberlines.mp4";
   }
 
   onSelect(house: House) {

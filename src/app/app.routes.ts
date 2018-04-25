@@ -11,6 +11,7 @@ import {AuthGuardService} from './services/auth-guard.service';
 import {MemberComponent} from './member/member.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { LoginComponent } from './login/login.component';
+import { VideoComponent } from './member/video/video.component';
 import { PageNotFoundComponent } from './pagenotfound.component';
 
 const appRoutes: Routes = [
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent, children: adminRoutes, canActivate: [AuthGuardService]},
   { path: 'member', component: MemberComponent, children: memberRoutes, canActivate: [AuthGuardService]},
+  { path: 'video/:id', component: VideoComponent, canActivate: [AuthGuardService]},
   { path: '**', component: PageNotFoundComponent }
 ];
 
