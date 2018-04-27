@@ -12,6 +12,8 @@
     </div>
     
   </div>
+  <div *ngIf="status=='success'" class="alert alert-success" role="alert"> {{ message }} </div>
+  <div *ngIf="status=='error'" class="alert alert-danger" role="alert"> {{ message }} </div>
   <div class="col-md-10 col-md-offset-1">
     <div>
       <a [routerLink]="['/admin/']" class="btn btn-default"> Back</a>

@@ -10,11 +10,16 @@ import {UserService} from '../../services/user.service';
 })
 export class AdminUserListComponent implements OnInit {
   users: Observable<User[]>;
+  status: string;
+  message: string;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.users = this.userService.getUsers();
+    this.userService.getUsers().subscribe(
+	  data => {
+	    this.users = data;
+	  },
+	  error =>  console.log(<any>error));
   }
-
 }

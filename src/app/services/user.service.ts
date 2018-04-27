@@ -10,11 +10,11 @@ export class UserService {
 
    constructor(private http: HttpClient) { }
 
-    getUsers():Observable<any> {
-      return this.http.get('http://localhost:8000/users')
-      .map((response) => response)        
-      .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
-    }
+  getUsers():Observable<any> {
+    return this.http.get('http://localhost:8000/users')
+    .map((response) => response)        
+    .catch((error: any) => Observable.throw(error.json().error || {message: 'Server Error'} ));;
+  }
   getUser(id: String): Observable<any> {
     return this.http.get('http://localhost:8000/users/' + id)
       .map((response) => response['user'])

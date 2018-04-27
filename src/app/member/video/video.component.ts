@@ -18,14 +18,10 @@ export class VideoComponent implements OnInit {
 
   ngOnInit() {
     this.params = this.activatedRoute.params.subscribe(params => this.id = params['id']);
-    console.log(this.activatedRoute.snapshot.url);
-  }
-
-  unSelect() {
-    $('video').first().attr('src','');
   }
 
   ngOnDestroy() {
     this.params.unsubscribe();
+    $('video').first().attr('src','');
   }
 }

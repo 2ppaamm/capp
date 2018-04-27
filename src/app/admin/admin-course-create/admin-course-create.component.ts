@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService} from '../../services/course.service';
 import { Router} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ag-admin-course-create',
@@ -10,8 +11,8 @@ import { Router} from '@angular/router';
 export class AdminCourseCreateComponent implements OnInit {
   status: string;
   message: string;
-
-  constructor(private courseService: CourseService, private router:Router) { }
+  selectedFile = null;
+  constructor(private courseService: CourseService, private router:Router, private http:HttpClient) { }
 
   ngOnInit() {
   }
@@ -29,5 +30,9 @@ export class AdminCourseCreateComponent implements OnInit {
        this.message = error['message'];
      }
    );
+  }
+
+  onFileSelected(event){
+    this.selectedFile = event.target.files[0];
   }
 }

@@ -28,6 +28,8 @@
           <div class="form-group">
             <label for="image" class="col-lg-2 control-label">Image</label>
             <div class="col-lg-10">
+              <input type="file" (change)="onFileSelected($event)" />
+              <button (click)="onImageUpload()">Upload Image</button>
               <input type="text" class="form-control" id="image" name="image" placeholder="Image of the course" ngModel #image="ngModel" required minlength="3">
               <div *ngIf="image.errors?.required && image.touched" class="alert alert-danger">
                 Image is required
